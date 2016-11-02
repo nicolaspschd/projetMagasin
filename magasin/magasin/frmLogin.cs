@@ -28,40 +28,45 @@ namespace magasin
         }
         bool mdpConfimation = false;
         public string login = string.Empty;
-        MySqlConnection connectionDB = new MySqlConnection("server=127.0.0.1;database=magasin;uid=root;pwd=;");
+        MySqlConnection connectionDB = new MySqlConnection("server=127.0.0.1;database=magasin;user=root;password=;");
         MySqlCommand cmd;
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string sql = "SELECT loginUser,mdpUser FROM utilisateurs WHERE loginUser=@login AND mdpUser=@mdp";
+            string sql = "SELECT mdpUser FROM utilisateurs WHERE loginUser=@login";
             cmd = new MySqlCommand(sql, connectionDB);
 
             cmd.Parameters.AddWithValue("@login", tbxLogin.Text);
-            cmd.Parameters.AddWithValue("@mdp", tbxMdp.Text);
 
-            connectionDB.Open();
-
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-            //  Si le mot de passe et le login sont les même que dans la db
-            while (reader.Read())
+            try
             {
-                Console.WriteLine(reader.GetValue(0));
-                if ((reader.GetValue(0) == tbxLogin.Text) && (reader.GetValue(1) == getSha1(tbxMdp.Text)))
+                connectionDB.Open();
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                //  Si le mot de passe et le login sont les même que dans la db
+                while (reader.Read())
                 {
-                    //  On l'autorise a se logger
-                    login = reader[0].ToString();
-                    
-                    lblAvert.Text = "Vous êtes loguer !";
-                }
-                else
-                {
-                    lblAvert.Text = "Erreur, veuillez réessayer";
+                    if (reader.GetValue(0).ToString() == getSha1(tbxMdp.Text))
+                    {
+                        //  On l'autorise a se logger
+                        login = tbxLogin.Text;
+                        Console.WriteLine(reader[0]);
+                        lblAvert.Text = "Vous êtes loguer !";
+                    }
+                    else
+                    {
+                        lblAvert.Text = "Erreur, veuillez réessayer";
+                    }
                 }
             }
-
+            catch (Exception)
+            {
+                MessageBox.Show("Il y a eu un problème", "Erreur", MessageBoxButtons.OK);
+            }
+            
             connectionDB.Close();
-
+            
             if (login != string.Empty)
             {
                 this.Close();
