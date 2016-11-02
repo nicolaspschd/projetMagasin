@@ -28,8 +28,7 @@ namespace magasin
         }
 
         public string login = string.Empty;
-        static string conString = "Server=127.0.0.1;Database=magasin;Uid=root;Pwd=;";
-        MySqlConnection connectionDB = new MySqlConnection(conString);
+        MySqlConnection connectionDB = new MySqlConnection("server=127.0.0.1;database=magasin;uid=root;pwd=;");
         MySqlCommand cmd;
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -44,23 +43,29 @@ namespace magasin
 
             MySqlDataReader reader = cmd.ExecuteReader();
 
-            if (reader.Read())
+            //  Si le mot de passe et le login sont les même que dans la db
+            while (reader.Read())
             {
-                //  Si le mot de passe et le login sont les même que dans la db
-                if ((reader[0].ToString() == tbxLogin.Text) && (reader[1].ToString() == getSha1(tbxMdp.Text)))
+                Console.WriteLine(reader.GetValue(0));
+                if ((reader.GetValue(0) == tbxLogin.Text) && (reader.GetValue(1) == getSha1(tbxMdp.Text)))
                 {
                     //  On l'autorise a se logger
                     login = reader[0].ToString();
-                    this.Close();
+                    
+                    lblAvert.Text = "Vous êtes loguer !";
                 }
                 else
                 {
-                    //  Sinon erreur
-                    MessageBox.Show("Erreur, veuillez réessayer", "Erreur de login", MessageBoxButtons.OK);
+                    lblAvert.Text = "Erreur, veuillez réessayer";
                 }
             }
 
             connectionDB.Close();
+
+            if (login != string.Empty)
+            {
+                this.Close();
+            }
         }
 
         private void btnInscription_Click(object sender, EventArgs e)
@@ -68,7 +73,7 @@ namespace magasin
             //  Si l'interface d'inscription n'est pas
             if (this.Controls.Find("tbxMdpConfirm", true).Count() == 0)
             {
-                //  On créer l'interface
+                #region Création lbl + tbx
                 TextBox tbxNativ = new TextBox();
                 Label lblNativ = new Label();
 
@@ -87,6 +92,7 @@ namespace magasin
                 //  Ajout des nouveaux controls
                 this.Controls.Add(tbxNativ);
                 this.Controls.Add(lblNativ);
+                #endregion
             }
             else
             {
@@ -167,11 +173,12 @@ namespace magasin
             byte[] resultat;
             StringBuilder stringBuild = new StringBuilder();
             SHA1CryptoServiceProvider sha1 = new SHA1CryptoServiceProvider();
-            
+
             sha1.ComputeHash(ASCIIEncoding.ASCII.GetBytes(text));
             resultat = sha1.Hash;
 
-            foreach(var carac in resultat){
+            foreach (var carac in resultat)
+            {
                 stringBuild.Append(carac.ToString("x2"));
             }
 

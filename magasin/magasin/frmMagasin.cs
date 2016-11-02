@@ -24,7 +24,7 @@ namespace magasin
             if (btnFrmLogin.Text == "Login")
             {
                 FrmLogin.ShowDialog();
-                btnFrmLogin.Text = "Logout";
+                btnFrmLogin.Text = FrmLogin.login;
             }
             else
             {
