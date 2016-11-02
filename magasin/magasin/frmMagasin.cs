@@ -31,7 +31,7 @@ namespace magasin
             if (btnFrmLogin.Text == "Login")
             {
                 FrmLogin.ShowDialog();
-                btnFrmLogin.Text = FrmLogin.login;
+                btnFrmLogin.Text = (FrmLogin.login == string.Empty)?"Login":FrmLogin.login;
             }
             else
             {
