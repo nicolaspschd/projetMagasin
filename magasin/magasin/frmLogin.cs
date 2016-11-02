@@ -26,7 +26,7 @@ namespace magasin
         {
             InitializeComponent();
         }
-
+        bool mdpConfimation = false;
         public string login = string.Empty;
         MySqlConnection connectionDB = new MySqlConnection("server=127.0.0.1;database=magasin;uid=root;pwd=;");
         MySqlCommand cmd;
@@ -120,27 +120,34 @@ namespace magasin
                 }
                 else
                 {
-                    //  Fermeture de la connexion
-                    connectionDB.Close();
-
-                    //  Préparation de la requête
-                    requete = "INSERT INTO utilisateurs(loginUser, mdpUser) VALUES(@login, @mdp)";
-
-                    //  Envois de la requête à la base de données
-                    cmd = new MySqlCommand(requete, connectionDB);
-                    cmd.Parameters.AddWithValue("@login", tbxLogin.Text);
-                    cmd.Parameters.AddWithValue("@mdp", getSha1(tbxMdp.Text));
-
-                    connectionDB.Open();
-
-                    //  Si la connexion et la requête s'est executée correctement s'est bien passée
-                    if (cmd.ExecuteNonQuery() > 0)
+                    if (mdpConfimation && tbxLogin.Text != string.Empty)
                     {
-                        //  L'utilisateur est inscrit
-                        MessageBox.Show("Vous êtes désormais inscrit !", "Oui !", MessageBoxButtons.OK);
+                        //  Fermeture de la connexion
                         connectionDB.Close();
-                        //  Connexion à l'application
-                        btnLogin.PerformClick();
+
+                        //  Préparation de la requête
+                        requete = "INSERT INTO utilisateurs(loginUser, mdpUser) VALUES(@login, @mdp)";
+
+                        //  Envois de la requête à la base de données
+                        cmd = new MySqlCommand(requete, connectionDB);
+                        cmd.Parameters.AddWithValue("@login", tbxLogin.Text);
+                        cmd.Parameters.AddWithValue("@mdp", getSha1(tbxMdp.Text));
+
+                        connectionDB.Open();
+
+                        //  Si la connexion et la requête s'est executée correctement s'est bien passée
+                        if (cmd.ExecuteNonQuery() > 0)
+                        {
+                            //  L'utilisateur est inscrit
+                            MessageBox.Show("Vous êtes désormais inscrit !", "Oui !", MessageBoxButtons.OK);
+                            connectionDB.Close();
+                            //  Connexion à l'application
+                            btnLogin.PerformClick();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Veuillez rentrez un nom d'utilisateur valide et un mot de passe non vide", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     }
                 }
                 connectionDB.Close();
@@ -162,11 +169,21 @@ namespace magasin
                 {
                     //  Si non, on affiche erreur
                     lblAvert.Text = "Le mot de passe ne correspond pas";
+                    mdpConfimation = false;
                 }
                 else
                 {
-                    //  Sinon, on dit ok
-                    lblAvert.Text = "Pas de soucis";
+                    if (tbxMdp.Text != string.Empty)
+                    {
+                        //  Sinon, on dit ok
+                        lblAvert.Text = "Pas de soucis";
+                        mdpConfimation = true;
+                    }
+                    else
+                    {
+                        lblAvert.Text = string.Empty;
+                        mdpConfimation = false;
+                    }
                 }
             }
         }
