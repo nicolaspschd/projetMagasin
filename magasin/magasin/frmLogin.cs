@@ -77,6 +77,9 @@ namespace magasin
                 TextBox tbxNativ = new TextBox();
                 Label lblNativ = new Label();
 
+                //  Desactive btnLogin
+                btnLogin.Visible = false;
+
                 //  Initialisation des paramètres de la nouvelle TextBox
                 tbxNativ.Name = "tbxMdpConfirm";
                 tbxNativ.Location = new Point(tbxMdp.Location.X, tbxMdp.Location.Y + 25);
@@ -137,7 +140,7 @@ namespace magasin
                         MessageBox.Show("Vous êtes désormais inscrit !", "Oui !", MessageBoxButtons.OK);
                         connectionDB.Close();
                         //  Connexion à l'application
-                        btnLogin_Click(null, null);
+                        btnLogin.PerformClick();
                     }
                 }
                 connectionDB.Close();
