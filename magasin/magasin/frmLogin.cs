@@ -26,11 +26,15 @@ namespace magasin
         {
             InitializeComponent();
         }
+
         bool mdpConfimation = false;
         public string login = string.Empty;
+        
         MySqlConnection connectionDB = new MySqlConnection("server=127.0.0.1;database=magasin;user=root;password=;");
         MySqlCommand cmd;
 
+        frmMagasin magas = new frmMagasin();
+        
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string sql = "SELECT mdpUser FROM utilisateurs WHERE loginUser=@login";
