@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 02 Novembre 2016 à 13:05
+-- Généré le :  Mer 02 Novembre 2016 à 15:39
 -- Version du serveur :  5.6.15-log
 -- Version de PHP :  5.5.8
 
@@ -43,10 +43,28 @@ CREATE TABLE IF NOT EXISTS `acheter` (
 --
 
 CREATE TABLE IF NOT EXISTS `categories` (
-  `idCategorie` int(10) NOT NULL AUTO_INCREMENT,
-  `nomCategorie` varchar(60) NOT NULL,
-  PRIMARY KEY (`idCategorie`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `idNomCategorie` varchar(60) NOT NULL,
+  PRIMARY KEY (`idNomCategorie`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `categories`
+--
+
+INSERT INTO `categories` (`idNomCategorie`) VALUES
+('Apero'),
+('Biscuits'),
+('Boissons'),
+('Boucherie'),
+('Boulangerie'),
+('Fromagerie'),
+('Fruits'),
+('Legumes'),
+('Patisseries'),
+('Poissonerie'),
+('Produits Bio'),
+('Produits Frais'),
+('Produits Locaux');
 
 -- --------------------------------------------------------
 
@@ -72,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `produits` (
   `nomProduits` varchar(60) NOT NULL,
   `stock` int(10) NOT NULL,
   `prix` double NOT NULL,
-  `idCategorie` int(10) NOT NULL,
+  `idCategorie` varchar(60) NOT NULL,
   PRIMARY KEY (`idProduits`),
   KEY `idCategorie` (`idCategorie`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
@@ -89,7 +107,14 @@ CREATE TABLE IF NOT EXISTS `utilisateurs` (
   `mdpUser` varchar(60) NOT NULL,
   PRIMARY KEY (`idUtilisateurs`),
   UNIQUE KEY `loginUser` (`loginUser`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+
+--
+-- Contenu de la table `utilisateurs`
+--
+
+INSERT INTO `utilisateurs` (`idUtilisateurs`, `loginUser`, `mdpUser`) VALUES
+(13, 'admin', 'f6889fc97e14b42dec11a8c183ea791c5465b658');
 
 --
 -- Contraintes pour les tables exportées
@@ -113,7 +138,7 @@ ALTER TABLE `favoris`
 -- Contraintes pour la table `produits`
 --
 ALTER TABLE `produits`
-  ADD CONSTRAINT `produits_ibfk_1` FOREIGN KEY (`idCategorie`) REFERENCES `categories` (`idCategorie`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `produits_ibfk_1` FOREIGN KEY (`idCategorie`) REFERENCES `categories` (`idNomCategorie`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

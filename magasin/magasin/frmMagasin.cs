@@ -60,7 +60,7 @@ namespace magasin
 
                 while (reader.Read())
                 {
-                    cbxCategories.Items.Add(reader.GetValue(1));
+                    cbxCategories.Items.Add(reader.GetValue(0));
                 }
             }
             catch (Exception ex)
