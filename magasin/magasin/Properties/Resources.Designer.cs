@@ -63,9 +63,9 @@ namespace magasin.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Icon semblable à (Icône).
         /// </summary>
-        internal static System.Drawing.Icon LaIcone {
+        internal static System.Drawing.Icon pitr_Sheep_icon {
             get {
-                object obj = ResourceManager.GetObject("LaIcone", resourceCulture);
+                object obj = ResourceManager.GetObject("pitr_Sheep_icon", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
