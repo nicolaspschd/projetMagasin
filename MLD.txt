@@ -1,0 +1,5 @@
+utilisateurs(#idUtilisateur, mdpUser, loginUser)
+produits(idProduit, nomPoduit, stock, prixProduit)
+categories(idCategorie, nomCategorie, idCategorie)
+acheter(#idUtilisateur,#idProduit, quantite)
+favoris(#idUtilisateur, #idProduit)
