@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ * Auteur : Paschoud Nicolas, en cooperation avec Marco Vlajkovic
+ * Nom du programme : Magasin
+ * Description : Magasin en ligne
+ * Date : 31 Août 2016
+ * Version : 1.0
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

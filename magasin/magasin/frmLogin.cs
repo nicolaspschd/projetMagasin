@@ -1,5 +1,5 @@
 ﻿/*
- * Auteur : Paschoud Nicolas
+ * Auteur : Paschoud Nicolas, en cooperation avec Marco Vlajkovic
  * Nom du programme : Magasin
  * Description : Magasin en ligne
  * Date : 31 Août 2016
