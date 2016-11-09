@@ -61,14 +61,14 @@ namespace magasin
 
         private void btnPanier_Click(object sender, EventArgs e)
         {
-            if (!panier.ContainsKey(lsbProduits.SelectedItem.ToString()))
+            /*if (!panier.ContainsKey(lsbProduits.SelectedItem.ToString()))
             {
                 panier.Add(lsbProduits.SelectedItem.ToString(), (int)nudQuantite.Value);
             }
             else
             {
                 panier[lsbProduits.SelectedItem.ToString()] = (int)nudQuantite.Value;
-            }
+            }*/
         }
 
     }

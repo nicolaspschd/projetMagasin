@@ -109,12 +109,10 @@
             this.lblPanier.Size = new System.Drawing.Size(39, 15);
             this.lblPanier.TabIndex = 6;
             this.lblPanier.Text = "Panier";
-            this.lblPanier.Click += new System.EventHandler(this.lblPanier_Click);
             // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.lsbProduits);
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Location = new System.Drawing.Point(12, 68);
             this.panel1.Name = "panel1";
@@ -208,8 +206,6 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(186, 113);
             this.tableLayoutPanel3.TabIndex = 4;
             // 
-            this.lsbProduits.Size = new System.Drawing.Size(120, 108);
-            this.lsbProduits.TabIndex = 3;
             // 
             // frmMagasin
             // 
