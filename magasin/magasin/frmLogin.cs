@@ -30,49 +30,17 @@ namespace magasin
         bool mdpConfimation = false;
         public string login = string.Empty;
 
-        MySqlConnection connectionDB = new MySqlConnection("server=127.0.0.1;database=magasin;user=root;password=;");
-        MySqlCommand cmd;
+        Sql requeteSQL = new Sql();
 
         frmMagasin magas = new frmMagasin();
         
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string sql = "SELECT mdpUser FROM utilisateurs WHERE loginUser=@login";
-            cmd = new MySqlCommand(sql, connectionDB);
-
-            cmd.Parameters.AddWithValue("@login", tbxLogin.Text);
-
-            try
+            if (requeteSQL.selectMdpUser(tbxMdp.Text, tbxLogin.Text)) 
             {
-                connectionDB.Open();
+                Console.WriteLine("login");
+                login = tbxLogin.Text;
 
-                MySqlDataReader reader = cmd.ExecuteReader();
-
-                //  Si le mot de passe et le login sont les même que dans la db
-                while (reader.Read())
-                {
-                    if (reader.GetValue(0).ToString() == getSha1(tbxMdp.Text))
-                    {
-                        //  On l'autorise a se logger
-                        login = tbxLogin.Text;
-                        Console.WriteLine(reader[0]);
-                        lblAvert.Text = "Vous êtes loguer !";
-                    }
-                    else
-                    {
-                        lblAvert.Text = "Erreur, veuillez réessayer";
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Il y a eu un problème", "Erreur", MessageBoxButtons.OK);
-            }
-            
-            connectionDB.Close();
-            
-            if (login != string.Empty)
-            {
                 this.Close();
             }
         }
@@ -108,58 +76,11 @@ namespace magasin
             }
             else
             {
-                string requete = "SELECT loginUser FROM utilisateurs WHERE loginUser=@login";
-
-                //  Préparation de la requête
-                cmd = new MySqlCommand(requete, connectionDB);
-                cmd.Parameters.AddWithValue("@login", tbxLogin.Text);
-
-                connectionDB.Open();
-                MySqlDataReader reader = cmd.ExecuteReader();
-
-                //  Si il y a quelque chose en retour dans la base
-                if (reader.Read())
+                if (requeteSQL.selectLoginUser(tbxLogin.Text, tbxMdp.Text, mdpConfimation))
                 {
-                    //  Si le login est déjà dans la base de donnée
-                    if (reader[0].ToString() == tbxLogin.Text)
-                    {
-                        //  On lui demande de recommencer
-                        MessageBox.Show("Login existant, veuillez en inserez un autre.", "Oups", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    btnLogin_Click(null, null);
+                    Console.WriteLine("inscrit");
                 }
-                else
-                {
-                    if (mdpConfimation && tbxLogin.Text != string.Empty)
-                    {
-                        //  Fermeture de la connexion
-                        connectionDB.Close();
-
-                        //  Préparation de la requête
-                        requete = "INSERT INTO utilisateurs(loginUser, mdpUser) VALUES(@login, @mdp)";
-
-                        //  Envois de la requête à la base de données
-                        cmd = new MySqlCommand(requete, connectionDB);
-                        cmd.Parameters.AddWithValue("@login", tbxLogin.Text);
-                        cmd.Parameters.AddWithValue("@mdp", getSha1(tbxMdp.Text));
-
-                        connectionDB.Open();
-
-                        //  Si la connexion et la requête s'est executée correctement s'est bien passée
-                        if (cmd.ExecuteNonQuery() > 0)
-                        {
-                            //  L'utilisateur est inscrit
-                            MessageBox.Show("Vous êtes désormais inscrit !", "Oui !", MessageBoxButtons.OK);
-                            connectionDB.Close();
-                            //  Connexion à l'application
-                            btnLogin.PerformClick();
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Veuillez rentrez un nom d'utilisateur valide et un mot de passe non vide", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    }
-                }
-                connectionDB.Close();
             }
         }
 
@@ -195,23 +116,6 @@ namespace magasin
                     }
                 }
             }
-        }
-
-        public string getSha1(string text)
-        {
-            byte[] resultat;
-            StringBuilder stringBuild = new StringBuilder();
-            SHA1CryptoServiceProvider sha1 = new SHA1CryptoServiceProvider();
-
-            sha1.ComputeHash(ASCIIEncoding.ASCII.GetBytes(text));
-            resultat = sha1.Hash;
-
-            foreach (var carac in resultat)
-            {
-                stringBuild.Append(carac.ToString("x2"));
-            }
-
-            return stringBuild.ToString();
         }
     }
 }
