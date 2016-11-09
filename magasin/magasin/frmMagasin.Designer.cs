@@ -33,7 +33,6 @@
             this.cbxCategories = new System.Windows.Forms.ComboBox();
             this.btnPanier = new System.Windows.Forms.Button();
             this.nudQuantite = new System.Windows.Forms.NumericUpDown();
-            this.lblPanier = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -41,6 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.lsbProduits = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantite)).BeginInit();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -93,23 +93,10 @@
             this.nudQuantite.Size = new System.Drawing.Size(120, 20);
             this.nudQuantite.TabIndex = 4;
             // 
-            // lblPanier
-            // 
-            this.lblPanier.AutoSize = true;
-            this.lblPanier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(86)))));
-            this.lblPanier.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblPanier.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblPanier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(208)))), ((int)(((byte)(192)))));
-            this.lblPanier.Location = new System.Drawing.Point(139, 17);
-            this.lblPanier.Name = "lblPanier";
-            this.lblPanier.Size = new System.Drawing.Size(39, 15);
-            this.lblPanier.TabIndex = 6;
-            this.lblPanier.Text = "Panier";
-            this.lblPanier.Click += new System.EventHandler(this.lblPanier_Click);
-            // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.lsbProduits);
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Location = new System.Drawing.Point(12, 68);
             this.panel1.Name = "panel1";
@@ -186,6 +173,23 @@
     "naire du Nord-Ouest de l\'Amérique du Sud, largement cultivée pour son fruit. Le " +
     "terme désigne aussi ce fruit charnu.";
             // 
+            // lsbProduits
+            // 
+            this.lsbProduits.FormattingEnabled = true;
+            this.lsbProduits.Items.AddRange(new object[] {
+            "test",
+            "test1",
+            "test2",
+            "test3",
+            "test4",
+            "test5",
+            "test6",
+            "test7"});
+            this.lsbProduits.Location = new System.Drawing.Point(265, 230);
+            this.lsbProduits.Name = "lsbProduits";
+            this.lsbProduits.Size = new System.Drawing.Size(120, 108);
+            this.lsbProduits.TabIndex = 3;
+            // 
             // frmMagasin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -193,7 +197,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(86)))));
             this.ClientSize = new System.Drawing.Size(1019, 645);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lblPanier);
             this.Controls.Add(this.nudQuantite);
             this.Controls.Add(this.btnPanier);
             this.Controls.Add(this.cbxCategories);
@@ -214,7 +217,6 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -224,7 +226,6 @@
         private System.Windows.Forms.ComboBox cbxCategories;
         private System.Windows.Forms.Button btnPanier;
         private System.Windows.Forms.NumericUpDown nudQuantite;
-        private System.Windows.Forms.Label lblPanier;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -232,6 +233,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ListBox lsbProduits;
     }
 }
 

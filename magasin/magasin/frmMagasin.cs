@@ -59,16 +59,16 @@ namespace magasin
             }
         }
 
-        private void lblPanier_Click(object sender, EventArgs e)
-        {
-            frmPanier FrmPanier = new frmPanier();
-            FrmPanier.ShowDialog();
-        }
-
         private void btnPanier_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(lsbProduits.SelectedItem.ToString() + "      " + (int)nudQuantite.Value);
-            panier.Add(lsbProduits.SelectedItem.ToString(), (int)nudQuantite.Value);
+            if (!panier.ContainsKey(lsbProduits.SelectedItem.ToString()))
+            {
+                panier.Add(lsbProduits.SelectedItem.ToString(), (int)nudQuantite.Value);
+            }
+            else
+            {
+                panier[lsbProduits.SelectedItem.ToString()] = (int)nudQuantite.Value;
+            }
         }
 
     }
