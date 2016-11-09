@@ -75,7 +75,7 @@
     <Compile Include="frmMagasin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMagasin.Designer.cs">
+    <Compile Include="frmMagasin.designer.cs">
       <DependentUpon>frmMagasin.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPanier.cs">

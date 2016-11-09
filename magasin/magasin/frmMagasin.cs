@@ -80,7 +80,8 @@ namespace magasin
 
         private void btnPanier_Click(object sender, EventArgs e)
         {
-            panier.Add(lsbProduits.SelectedItem.ToString(),(int)nudQuantite.Value);
+          //  panier.Add(lsbProduits.SelectedItem.ToString(),(int)nudQuantite.Value);
         }
+
     }
 }
