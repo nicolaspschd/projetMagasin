@@ -126,5 +126,29 @@ namespace magasin
 
             return resultat;
         }
+
+        public List<string> selectCategories()
+        {
+            cmd = new MySqlCommand("SELECT * FROM categories", connectionDB);
+            List<string> categories = new List<string>();
+            try
+            {
+                connectionDB.Open();
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    categories.Add(reader.GetValue(0).ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            connectionDB.Close();
+            return categories;
+        }
     }
 }

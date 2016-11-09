@@ -22,14 +22,15 @@ namespace magasin
         private void frmPanier_Load(object sender, EventArgs e)
         {
             int i = 0;
-            magas = (frmMagasin)this.Owner;
-            
-            while (i <= magas.panier.Count())
+            magas = this.Owner as frmMagasin;
+            Console.WriteLine(panier.ElementAt(0));
+
+            /*while (i < magas.panier.Count())
             {
-                i++;
-                Console.WriteLine(magas.panier.ElementAt(i));
+                
                 lsbListPanier.Items.Add(magas.panier.ElementAt(i).Key + "  x " + magas.panier.ElementAt(i).Value);
-            }
+                i++;
+            }*/
         }
     }
 }

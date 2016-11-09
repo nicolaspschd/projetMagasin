@@ -21,8 +21,7 @@ namespace magasin
 {
     public partial class frmMagasin : Form
     {
-        MySqlConnection connectionDB = new MySqlConnection("server=127.0.0.1;database=magasin;user=root;password=;");
-        MySqlCommand cmd;
+        Sql requetteDB = new Sql();
 
         public Dictionary<string, int> panier = new Dictionary<string,int>();
 
@@ -51,25 +50,13 @@ namespace magasin
 
         private void frmMagasin_Load(object sender, EventArgs e)
         {
-            cmd = new MySqlCommand("SELECT * FROM categories", connectionDB);
-
-            try
+            int i = 0;
+            List<string> categories = requetteDB.selectCategories();
+            while (i < categories.Count)
             {
-                connectionDB.Open();
-
-                MySqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    cbxCategories.Items.Add(reader.GetValue(0));
-                }
+                cbxCategories.Items.Add(categories[i]);
+                i++;
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
-            connectionDB.Close();
         }
 
         private void lblPanier_Click(object sender, EventArgs e)
@@ -80,7 +67,8 @@ namespace magasin
 
         private void btnPanier_Click(object sender, EventArgs e)
         {
-          //  panier.Add(lsbProduits.SelectedItem.ToString(),(int)nudQuantite.Value);
+            Console.WriteLine(lsbProduits.SelectedItem.ToString() + "      " + (int)nudQuantite.Value);
+            panier.Add(lsbProduits.SelectedItem.ToString(), (int)nudQuantite.Value);
         }
 
     }
