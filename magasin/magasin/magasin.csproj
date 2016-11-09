@@ -78,8 +78,15 @@
     <Compile Include="frmMagasin.Designer.cs">
       <DependentUpon>frmMagasin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPanier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPanier.Designer.cs">
+      <DependentUpon>frmPanier.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sql.cs" />
     <EmbeddedResource Include="frmAdmin.resx">
       <DependentUpon>frmAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -88,6 +95,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMagasin.resx">
       <DependentUpon>frmMagasin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPanier.resx">
+      <DependentUpon>frmPanier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

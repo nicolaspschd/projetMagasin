@@ -21,9 +21,10 @@ namespace magasin
 {
     public partial class frmMagasin : Form
     {
-
         MySqlConnection connectionDB = new MySqlConnection("server=127.0.0.1;database=magasin;user=root;password=;");
         MySqlCommand cmd;
+
+        public Dictionary<string, int> panier = new Dictionary<string,int>();
 
         public frmMagasin()
         {
@@ -69,6 +70,17 @@ namespace magasin
             }
 
             connectionDB.Close();
+        }
+
+        private void lblPanier_Click(object sender, EventArgs e)
+        {
+            frmPanier FrmPanier = new frmPanier();
+            FrmPanier.ShowDialog();
+        }
+
+        private void btnPanier_Click(object sender, EventArgs e)
+        {
+            panier.Add(lsbProduits.,(int)nudQuantite.Value);
         }
     }
 }

@@ -29,7 +29,7 @@ namespace magasin
 
         bool mdpConfimation = false;
         public string login = string.Empty;
-        
+
         MySqlConnection connectionDB = new MySqlConnection("server=127.0.0.1;database=magasin;user=root;password=;");
         MySqlCommand cmd;
 
