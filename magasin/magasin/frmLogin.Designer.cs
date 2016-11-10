@@ -40,28 +40,35 @@
             // 
             // btnInscription
             // 
-            this.btnInscription.Location = new System.Drawing.Point(108, 189);
+            this.btnInscription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(86)))));
+            this.btnInscription.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnInscription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(208)))), ((int)(((byte)(192)))));
+            this.btnInscription.Location = new System.Drawing.Point(154, 152);
             this.btnInscription.Name = "btnInscription";
             this.btnInscription.Size = new System.Drawing.Size(172, 23);
             this.btnInscription.TabIndex = 4;
             this.btnInscription.Text = "Inscription";
-            this.btnInscription.UseVisualStyleBackColor = true;
+            this.btnInscription.UseVisualStyleBackColor = false;
             this.btnInscription.Click += new System.EventHandler(this.btnInscription_Click);
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(108, 160);
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(86)))));
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(208)))), ((int)(((byte)(192)))));
+            this.btnLogin.Location = new System.Drawing.Point(154, 123);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(172, 23);
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // lblLogin
             // 
             this.lblLogin.AutoSize = true;
             this.lblLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(208)))), ((int)(((byte)(192)))));
             this.lblLogin.Location = new System.Drawing.Point(11, 9);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(62, 24);
@@ -70,18 +77,26 @@
             // 
             // tbxLogin
             // 
-            this.tbxLogin.Location = new System.Drawing.Point(108, 47);
+            this.tbxLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(86)))));
+            this.tbxLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbxLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(208)))), ((int)(((byte)(192)))));
+            this.tbxLogin.Location = new System.Drawing.Point(154, 47);
             this.tbxLogin.Name = "tbxLogin";
-            this.tbxLogin.Size = new System.Drawing.Size(172, 20);
+            this.tbxLogin.Size = new System.Drawing.Size(172, 26);
             this.tbxLogin.TabIndex = 0;
             // 
             // tbxMdp
             // 
             this.tbxMdp.AccessibleDescription = "";
-            this.tbxMdp.Location = new System.Drawing.Point(108, 73);
+            this.tbxMdp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(86)))));
+            this.tbxMdp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbxMdp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxMdp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(208)))), ((int)(((byte)(192)))));
+            this.tbxMdp.Location = new System.Drawing.Point(154, 79);
             this.tbxMdp.Name = "tbxMdp";
             this.tbxMdp.PasswordChar = '*';
-            this.tbxMdp.Size = new System.Drawing.Size(172, 20);
+            this.tbxMdp.Size = new System.Drawing.Size(172, 26);
             this.tbxMdp.TabIndex = 1;
             this.tbxMdp.Tag = "";
             this.tbxMdp.TextChanged += new System.EventHandler(this.tbxMdp_TextChanged);
@@ -90,7 +105,8 @@
             // 
             this.lblLoginInfo.AutoSize = true;
             this.lblLoginInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoginInfo.Location = new System.Drawing.Point(12, 48);
+            this.lblLoginInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(208)))), ((int)(((byte)(192)))));
+            this.lblLoginInfo.Location = new System.Drawing.Point(15, 52);
             this.lblLoginInfo.Name = "lblLoginInfo";
             this.lblLoginInfo.Size = new System.Drawing.Size(41, 16);
             this.lblLoginInfo.TabIndex = 0;
@@ -100,7 +116,8 @@
             // 
             this.lblMdpInfo.AutoSize = true;
             this.lblMdpInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMdpInfo.Location = new System.Drawing.Point(12, 74);
+            this.lblMdpInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(208)))), ((int)(((byte)(192)))));
+            this.lblMdpInfo.Location = new System.Drawing.Point(15, 84);
             this.lblMdpInfo.Name = "lblMdpInfo";
             this.lblMdpInfo.Size = new System.Drawing.Size(90, 16);
             this.lblMdpInfo.TabIndex = 0;
@@ -118,7 +135,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(292, 224);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(86)))));
+            this.ClientSize = new System.Drawing.Size(337, 187);
             this.Controls.Add(this.lblAvert);
             this.Controls.Add(this.tbxMdp);
             this.Controls.Add(this.tbxLogin);
@@ -127,7 +145,7 @@
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btnInscription);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.Name = "frmLogin";
             this.Text = "Login";

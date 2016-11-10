@@ -61,7 +61,8 @@ namespace magasin
 
         private void btnPanier_Click(object sender, EventArgs e)
         {
-            panier.Add(((Button)(sender)).Tag.ToString(), (int)((NumericUpDown)this.Controls.Find("nud" + ((Button)(sender)).Tag.ToString(), true).FirstOrDefault()).Value);
+            panier.Add(((Button)(sender)).Tag.ToString(),
+                (int)((NumericUpDown)this.Controls.Find("nud" + ((Button)(sender)).Tag.ToString(), true).FirstOrDefault()).Value);
         }
 
     }

@@ -17,6 +17,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
 using MySql.Data.MySqlClient;
+using System.Drawing;
 
 namespace magasin
 {
@@ -53,13 +54,21 @@ namespace magasin
                 #region Création lbl + tbx
                 TextBox tbxNativ = new TextBox();
                 Label lblNativ = new Label();
+                Color fondCouleur = new Color();
+                Color textCouleur = new Color();
+                fondCouleur = Color.FromArgb( 78, 78, 86);
+                textCouleur = Color.FromArgb(220, 208, 192);
 
                 //  Desactive btnLogin
                 btnLogin.Visible = false;
 
                 //  Initialisation des paramètres de la nouvelle TextBox
                 tbxNativ.Name = "tbxMdpConfirm";
-                tbxNativ.Location = new Point(tbxMdp.Location.X, tbxMdp.Location.Y + 25);
+                tbxNativ.BackColor = fondCouleur;
+                tbxNativ.ForeColor = textCouleur;
+                tbxNativ.BorderStyle = BorderStyle.FixedSingle;
+                tbxNativ.Font = new Font("Microsoft Sans Serif", 12);
+                tbxNativ.Location = new Point(tbxMdp.Location.X, tbxMdp.Location.Y + 32);
                 tbxNativ.Size = tbxMdp.Size;
                 tbxNativ.PasswordChar = '*';
                 tbxNativ.TabIndex = 2;
@@ -67,6 +76,9 @@ namespace magasin
 
                 //  Initialisation des paramètres du nouveau Label
                 lblNativ.Text = "Confirmer le MDP";
+                lblNativ.Width = 115;
+                lblNativ.ForeColor = textCouleur;
+                lblNativ.Font = new Font("Microsoft Sans Serif", 9.75f);
                 lblNativ.Location = new Point(lblMdpInfo.Location.X, tbxNativ.Location.Y);
 
                 //  Ajout des nouveaux controls
