@@ -35,7 +35,7 @@ namespace magasin
             return stringBuild.ToString();
         }
 
-        public bool selectMdpUser(string mdp, string login)
+        public bool selectMdpUser(string mdp, string login,Label lbl)
         {
             bool loguer = false;
             cmd = new MySqlCommand(SELECTMDPUSER, connectionDB);
@@ -60,14 +60,14 @@ namespace magasin
                     }
                     else
                     {
-                        MessageBox.Show("Il y a eu un problème", "Erreur", MessageBoxButtons.OK);
+                        lbl.Text = "Il y a eu un problème";
                         loguer = false;
                     }
                 }
             }
             catch (Exception)
             {
-                MessageBox.Show("Il y a eu un problème", "Erreur", MessageBoxButtons.OK);
+                lbl.Text = "Il y a eu un problème";
                 loguer = false;
             }
 

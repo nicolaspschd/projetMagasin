@@ -37,7 +37,7 @@ namespace magasin
         
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (requeteSQL.selectMdpUser(tbxMdp.Text, tbxLogin.Text)) 
+            if (requeteSQL.selectMdpUser(tbxMdp.Text, tbxLogin.Text,lblAvert)) 
             {
                 Console.WriteLine("login");
                 login = tbxLogin.Text;
@@ -110,16 +110,20 @@ namespace magasin
                 if (tbxMdp.Text != mdpConfirm)
                 {
                     //  Si non, on affiche erreur
-                    lblAvert.Text = "Le mot de passe ne correspond pas";
+                    lblAvert.Text = "Les mots de passe ne correspond pas";
                     mdpConfimation = false;
                 }
                 else
                 {
+                    //  Sinon, on dit ok
                     if (tbxMdp.Text != string.Empty)
                     {
-                        //  Sinon, on dit ok
-                        lblAvert.Text = "Pas de soucis";
+                        lblAvert.Text = "Mot de passe : ✔";
                         mdpConfimation = true;
+                        if (tbxLogin.Text != string.Empty)
+                        {
+                            lblAvert.Text = "Login : ✔\nMot de passe : ✔";
+                        }
                     }
                     else
                     {
