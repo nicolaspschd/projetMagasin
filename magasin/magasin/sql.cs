@@ -48,6 +48,7 @@ namespace magasin
         const string SELECTCATEGORIES = "SELECT * FROM categories";
         const string SELECTPRODUIT = "SELECT nomProduits, prix, description, lienImage FROM produits WHERE idCategorie = @categorie";
         const string INSERTUSER = "INSERT INTO utilisateurs(loginUser, mdpUser) VALUES(@login, @mdp)";
+        const string SELECTSEARCHBAR = "SELECT nomProduits,prix,description,lienImage FROM produits WHERE nomProduits LIKE '%@search%'";
 
         static public bool conOK()
         {
@@ -207,6 +208,43 @@ namespace magasin
             cmd = new MySqlCommand(SELECTPRODUIT, connectionDB);
 
             cmd.Parameters.AddWithValue("@categorie", categorie);
+
+            try
+            {
+                connectionDB.Open();
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        NomProduits.Add(reader.GetString(0));
+                        PrixProduits.Add(reader.GetString(1));
+                        DescriptionProduits.Add(reader.GetString(2));
+                        LienImageProduits.Add(reader.GetString(3));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            connectionDB.Close();
+        }
+
+        static public void selectProduit(string search)
+        {
+            NomProduits.Clear();
+            PrixProduits.Clear();
+            DescriptionProduits.Clear();
+            LienImageProduits.Clear();
+
+            cmd = new MySqlCommand("SELECT nomProduits,prix,description,lienImage FROM produits WHERE nomProduits LIKE '%"+search+"%'", connectionDB);
+        //    Console.WriteLine("la recherche est : |" + search + "|");
+          //  cmd.Parameters.AddWithValue("@search", search);
+         //   Console.WriteLine(cmd.CommandText);
 
             try
             {

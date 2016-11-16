@@ -96,5 +96,19 @@ namespace magasin
         {
             panelProduit.Focus();
         }
+        private void pbxRecherche_Click(object sender, EventArgs e)
+        {
+            cbxCategories.Enabled = false;
+            panelProduit.Controls.Clear();
+            Sql.selectProduit(tbxRecherche.Text);
+            for (int i = 0; i < Sql.NomProduits.Count; i++)
+            {
+                panelProduit.Controls.Add(Article.AfficherArticle(Sql.NomProduits[i], Sql.PrixProduits[i], Sql.DescriptionProduits[i], Sql.LienImageProduits[i], this, i));
+            }
+            Console.WriteLine(Sql.NomProduits.Count.ToString());
+            cbxCategories.Enabled = true;
+            panelProduit.Focus();
+        }
+
     }
 }

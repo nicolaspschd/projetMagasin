@@ -351,6 +351,7 @@
             this.pbxRecherche.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxRecherche.TabIndex = 16;
             this.pbxRecherche.TabStop = false;
+            this.pbxRecherche.Click += new System.EventHandler(this.pbxRecherche_Click);
             // 
             // lblNbrPanier
             // 
