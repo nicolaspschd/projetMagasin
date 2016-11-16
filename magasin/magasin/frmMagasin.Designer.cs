@@ -34,13 +34,13 @@
             this.btnPanier = new System.Windows.Forms.Button();
             this.nudQuantite = new System.Windows.Forms.NumericUpDown();
             this.panelProduit = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.Article = new System.Windows.Forms.TableLayoutPanel();
             this.pbxImage = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.InformationArticle = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitre = new System.Windows.Forms.Label();
             this.lblPrix = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.GestionPanier = new System.Windows.Forms.TableLayoutPanel();
             this.panelPanier = new System.Windows.Forms.Panel();
             this.gbxProduit = new System.Windows.Forms.GroupBox();
             this.lblProduitPanier = new System.Windows.Forms.Label();
@@ -55,10 +55,10 @@
             this.pbxRecherche = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantite)).BeginInit();
             this.panelProduit.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.Article.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImage)).BeginInit();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
+            this.InformationArticle.SuspendLayout();
+            this.GestionPanier.SuspendLayout();
             this.panelPanier.SuspendLayout();
             this.gbxProduit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxRecherche)).BeginInit();
@@ -120,55 +120,55 @@
             // panelProduit
             // 
             this.panelProduit.AutoScroll = true;
-            this.panelProduit.Controls.Add(this.tableLayoutPanel1);
+            this.panelProduit.Controls.Add(this.Article);
             this.panelProduit.Location = new System.Drawing.Point(12, 68);
             this.panelProduit.Name = "panelProduit";
             this.panelProduit.Size = new System.Drawing.Size(867, 700);
             this.panelProduit.TabIndex = 8;
             // 
-            // tableLayoutPanel1
+            // Article
             // 
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.92537F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.07462F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tableLayoutPanel1.Controls.Add(this.pbxImage, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 2, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 14);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(846, 123);
-            this.tableLayoutPanel1.TabIndex = 2;
+            this.Article.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
+            this.Article.ColumnCount = 3;
+            this.Article.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.92537F));
+            this.Article.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.07462F));
+            this.Article.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 206F));
+            this.Article.Controls.Add(this.pbxImage, 0, 0);
+            this.Article.Controls.Add(this.InformationArticle, 1, 0);
+            this.Article.Controls.Add(this.GestionPanier, 2, 0);
+            this.Article.Location = new System.Drawing.Point(12, 14);
+            this.Article.Name = "Article";
+            this.Article.RowCount = 1;
+            this.Article.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.Article.Size = new System.Drawing.Size(846, 123);
+            this.Article.TabIndex = 2;
             // 
             // pbxImage
             // 
             this.pbxImage.Image = ((System.Drawing.Image)(resources.GetObject("pbxImage.Image")));
             this.pbxImage.Location = new System.Drawing.Point(5, 5);
             this.pbxImage.Name = "pbxImage";
-            this.pbxImage.Size = new System.Drawing.Size(216, 113);
+            this.pbxImage.Size = new System.Drawing.Size(214, 113);
             this.pbxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImage.TabIndex = 0;
             this.pbxImage.TabStop = false;
             // 
-            // tableLayoutPanel2
+            // InformationArticle
             // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.92537F));
-            this.tableLayoutPanel2.Controls.Add(this.lblTitre, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.lblPrix, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.lblDescription, 0, 2);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(229, 5);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 3;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(409, 113);
-            this.tableLayoutPanel2.TabIndex = 3;
+            this.InformationArticle.ColumnCount = 1;
+            this.InformationArticle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.92537F));
+            this.InformationArticle.Controls.Add(this.lblTitre, 0, 0);
+            this.InformationArticle.Controls.Add(this.lblPrix, 0, 1);
+            this.InformationArticle.Controls.Add(this.lblDescription, 0, 2);
+            this.InformationArticle.Location = new System.Drawing.Point(227, 5);
+            this.InformationArticle.Name = "InformationArticle";
+            this.InformationArticle.RowCount = 3;
+            this.InformationArticle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.InformationArticle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.InformationArticle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
+            this.InformationArticle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.InformationArticle.Size = new System.Drawing.Size(405, 113);
+            this.InformationArticle.TabIndex = 3;
             // 
             // lblTitre
             // 
@@ -193,25 +193,25 @@
             this.lblDescription.AutoSize = true;
             this.lblDescription.Location = new System.Drawing.Point(3, 49);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(401, 39);
+            this.lblDescription.Size = new System.Drawing.Size(398, 39);
             this.lblDescription.TabIndex = 2;
             this.lblDescription.Text = "La tomate est une espèce de plantes herbacées de la famille des Solanacées, origi" +
     "naire du Nord-Ouest de l\'Amérique du Sud, largement cultivée pour son fruit. Le " +
     "terme désigne aussi ce fruit charnu.";
             // 
-            // tableLayoutPanel3
+            // GestionPanier
             // 
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.nudQuantite, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnPanier, 0, 1);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(646, 5);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.8938F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.10619F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(186, 113);
-            this.tableLayoutPanel3.TabIndex = 4;
+            this.GestionPanier.ColumnCount = 1;
+            this.GestionPanier.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.GestionPanier.Controls.Add(this.nudQuantite, 0, 0);
+            this.GestionPanier.Controls.Add(this.btnPanier, 0, 1);
+            this.GestionPanier.Location = new System.Drawing.Point(640, 5);
+            this.GestionPanier.Name = "GestionPanier";
+            this.GestionPanier.RowCount = 2;
+            this.GestionPanier.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.8938F));
+            this.GestionPanier.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.10619F));
+            this.GestionPanier.Size = new System.Drawing.Size(186, 113);
+            this.GestionPanier.TabIndex = 4;
             // 
             // panelPanier
             // 
@@ -376,11 +376,11 @@
             this.Load += new System.EventHandler(this.frmMagasin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantite)).EndInit();
             this.panelProduit.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.Article.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxImage)).EndInit();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
+            this.InformationArticle.ResumeLayout(false);
+            this.InformationArticle.PerformLayout();
+            this.GestionPanier.ResumeLayout(false);
             this.panelPanier.ResumeLayout(false);
             this.gbxProduit.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxRecherche)).EndInit();
@@ -396,13 +396,13 @@
         private System.Windows.Forms.Button btnPanier;
         private System.Windows.Forms.NumericUpDown nudQuantite;
         private System.Windows.Forms.Panel panelProduit;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel Article;
         private System.Windows.Forms.PictureBox pbxImage;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel InformationArticle;
         private System.Windows.Forms.Label lblTitre;
         private System.Windows.Forms.Label lblPrix;
         private System.Windows.Forms.Label lblDescription;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TableLayoutPanel GestionPanier;
         private System.Windows.Forms.Panel panelPanier;
         private System.Windows.Forms.GroupBox gbxProduit;
         private System.Windows.Forms.Label lblProduitPanier;

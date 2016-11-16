@@ -61,6 +61,7 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Article.cs" />
     <Compile Include="frmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>

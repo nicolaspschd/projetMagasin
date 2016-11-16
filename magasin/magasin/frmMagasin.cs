@@ -55,9 +55,10 @@ namespace magasin
                 cbxCategories.Items.Add(categories[i]);
                 i++;
             }
+            cbxCategories.SelectedIndex = 0;
         }
 
-        private void btnPanier_Click(object sender, EventArgs e)
+        public void btnPanier_Click(object sender, EventArgs e)
         {
             panier.Add((sender as Button).Tag.ToString(),
                 Convert.ToInt32(((NumericUpDown)this.Controls.Find("nud" + ((Button)(sender)).Tag.ToString(), true).FirstOrDefault()).Value));
