@@ -34,7 +34,7 @@
             this.btnPanier = new System.Windows.Forms.Button();
             this.nudQuantite = new System.Windows.Forms.NumericUpDown();
             this.panelProduit = new System.Windows.Forms.Panel();
-            this.Article = new System.Windows.Forms.TableLayoutPanel();
+            this.ArticleNatif = new System.Windows.Forms.TableLayoutPanel();
             this.pbxImage = new System.Windows.Forms.PictureBox();
             this.InformationArticle = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitre = new System.Windows.Forms.Label();
@@ -55,7 +55,7 @@
             this.pbxRecherche = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantite)).BeginInit();
             this.panelProduit.SuspendLayout();
-            this.Article.SuspendLayout();
+            this.ArticleNatif.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImage)).BeginInit();
             this.InformationArticle.SuspendLayout();
             this.GestionPanier.SuspendLayout();
@@ -89,6 +89,7 @@
             this.cbxCategories.Name = "cbxCategories";
             this.cbxCategories.Size = new System.Drawing.Size(164, 21);
             this.cbxCategories.TabIndex = 1;
+            this.cbxCategories.SelectedIndexChanged += new System.EventHandler(this.cbxCategories_SelectedIndexChanged);
             // 
             // btnPanier
             // 
@@ -121,28 +122,29 @@
             // panelProduit
             // 
             this.panelProduit.AutoScroll = true;
-            this.panelProduit.Controls.Add(this.Article);
+            this.panelProduit.Controls.Add(this.ArticleNatif);
             this.panelProduit.Location = new System.Drawing.Point(12, 68);
             this.panelProduit.Name = "panelProduit";
             this.panelProduit.Size = new System.Drawing.Size(867, 700);
             this.panelProduit.TabIndex = 8;
+            this.panelProduit.Click += new System.EventHandler(this.panelProduit_Click);
             // 
-            // Article
+            // ArticleNatif
             // 
-            this.Article.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
-            this.Article.ColumnCount = 3;
-            this.Article.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.92537F));
-            this.Article.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.07462F));
-            this.Article.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 209F));
-            this.Article.Controls.Add(this.pbxImage, 0, 0);
-            this.Article.Controls.Add(this.InformationArticle, 1, 0);
-            this.Article.Controls.Add(this.GestionPanier, 2, 0);
-            this.Article.Location = new System.Drawing.Point(17, 14);
-            this.Article.Name = "Article";
-            this.Article.RowCount = 1;
-            this.Article.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.Article.Size = new System.Drawing.Size(846, 123);
-            this.Article.TabIndex = 2;
+            this.ArticleNatif.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
+            this.ArticleNatif.ColumnCount = 3;
+            this.ArticleNatif.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.92537F));
+            this.ArticleNatif.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.07462F));
+            this.ArticleNatif.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 209F));
+            this.ArticleNatif.Controls.Add(this.pbxImage, 0, 0);
+            this.ArticleNatif.Controls.Add(this.InformationArticle, 1, 0);
+            this.ArticleNatif.Controls.Add(this.GestionPanier, 2, 0);
+            this.ArticleNatif.Location = new System.Drawing.Point(17, 14);
+            this.ArticleNatif.Name = "ArticleNatif";
+            this.ArticleNatif.RowCount = 1;
+            this.ArticleNatif.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.ArticleNatif.Size = new System.Drawing.Size(846, 123);
+            this.ArticleNatif.TabIndex = 2;
             // 
             // pbxImage
             // 
@@ -377,7 +379,7 @@
             this.Load += new System.EventHandler(this.frmMagasin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantite)).EndInit();
             this.panelProduit.ResumeLayout(false);
-            this.Article.ResumeLayout(false);
+            this.ArticleNatif.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxImage)).EndInit();
             this.InformationArticle.ResumeLayout(false);
             this.InformationArticle.PerformLayout();
@@ -397,7 +399,7 @@
         private System.Windows.Forms.Button btnPanier;
         private System.Windows.Forms.NumericUpDown nudQuantite;
         private System.Windows.Forms.Panel panelProduit;
-        private System.Windows.Forms.TableLayoutPanel Article;
+        private System.Windows.Forms.TableLayoutPanel ArticleNatif;
         private System.Windows.Forms.PictureBox pbxImage;
         private System.Windows.Forms.TableLayoutPanel InformationArticle;
         private System.Windows.Forms.Label lblTitre;

@@ -14,6 +14,35 @@ namespace magasin
         static MySqlConnection connectionDB = new MySqlConnection("server=10.134.97.69;database=magasin;user=root;password=;");
         static MySqlCommand cmd;
 
+        static List<string> _nomProduits = new List<string>();
+        static List<string> _prixProduits = new List<string>();
+        static List<string> _descriptionProduits = new List<string>();
+        static List<string> _lienImageProduits = new List<string>();
+
+        public static List<string> PrixProduits
+        {
+            get { return Sql._prixProduits; }
+            set { Sql._prixProduits = value; }
+        }
+
+        public static List<string> DescriptionProduits
+        {
+            get { return Sql._descriptionProduits; }
+            set { Sql._descriptionProduits = value; }
+        }
+
+        public static List<string> NomProduits
+        {
+            get { return Sql._nomProduits; }
+            set { Sql._nomProduits = value; }
+        }
+
+        public static List<string> LienImageProduits
+        {
+            get { return Sql._lienImageProduits; }
+            set { Sql._lienImageProduits = value; }
+        }
+
         const string SELECTMDPUSER = "SELECT mdpUser FROM utilisateurs WHERE loginUser=@login";
         const string SELECTLOGINUSER = "SELECT loginUser FROM utilisateurs WHERE loginUser=@login";
         const string SELECTCATEGORIES = "SELECT * FROM categories";
@@ -168,9 +197,13 @@ namespace magasin
             return categories;
         }
 
-        static public void selectProduit(string categorie)
+        static public void selectProduits(string categorie)
         {
-            List<string> produits = new List<string>();
+            NomProduits.Clear();
+            PrixProduits.Clear();
+            DescriptionProduits.Clear();
+            LienImageProduits.Clear();
+
             cmd = new MySqlCommand(SELECTPRODUIT, connectionDB);
 
             cmd.Parameters.AddWithValue("@categorie", categorie);
@@ -185,7 +218,10 @@ namespace magasin
                 {
                     while (reader.Read())
                     {
-                        produits.Add(reader.GetString(0) + ";" + reader.GetString(1) + ";" + reader.GetString(2) + ";" + reader.GetString(3));
+                        NomProduits.Add(reader.GetString(0));
+                        PrixProduits.Add(reader.GetString(1));
+                        DescriptionProduits.Add(reader.GetString(2));
+                        LienImageProduits.Add(reader.GetString(3));
                     }
                 }
             }

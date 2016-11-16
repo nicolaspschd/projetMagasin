@@ -21,7 +21,7 @@ namespace magasin
 {
     public partial class frmMagasin : Form
     {
-        public Dictionary<string, int> panier = new Dictionary<string,int>();
+        public Dictionary<string, int> panier = new Dictionary<string, int>();
 
         public frmMagasin()
         {
@@ -34,11 +34,11 @@ namespace magasin
             if (btnFrmLogin.Text == "Login")
             {
                 FrmLogin.ShowDialog();
-                btnFrmLogin.Text = (FrmLogin.login == string.Empty)?"Login":FrmLogin.login;
+                btnFrmLogin.Text = (FrmLogin.login == string.Empty) ? "Login" : FrmLogin.login;
             }
             else
             {
-                DialogResult dr = MessageBox.Show("Voulez-vous vous déconnecter ?","Deconnexion",MessageBoxButtons.YesNo);
+                DialogResult dr = MessageBox.Show("Voulez-vous vous déconnecter ?", "Deconnexion", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
                 {
                     btnFrmLogin.Text = "Login";
@@ -62,6 +62,26 @@ namespace magasin
         {
             panier.Add((sender as Button).Tag.ToString(),
                 Convert.ToInt32(((NumericUpDown)this.Controls.Find("nud" + (sender as Button).Tag.ToString(), true).FirstOrDefault()).Value));
+        }
+
+        private void cbxCategories_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbxCategories.Enabled = false;
+            panelProduit.Controls.Clear();
+
+            Sql.selectProduits(cbxCategories.SelectedItem.ToString());
+
+            for (int i = 0; i < Sql.NomProduits.Count; i++)
+            {
+                panelProduit.Controls.Add(Article.AfficherArticle(Sql.NomProduits[i], Sql.PrixProduits[i], Sql.DescriptionProduits[i], string.Empty, this, i));
+            }
+            cbxCategories.Enabled = true;
+            panelProduit.Focus();
+        }
+
+        public void panelProduit_Click(object sender, EventArgs e)
+        {
+            panelProduit.Focus();
         }
 
     }

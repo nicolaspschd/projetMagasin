@@ -10,7 +10,7 @@ namespace magasin
 {
    static class Article
     {
-       static public TableLayoutPanel AfficherArticle(string nom, string prix, string description, string image, frmMagasin frm,int position)
+        static public TableLayoutPanel AfficherArticle(string nom, string prix, string description, string image, frmMagasin frm,int position)
         {
             #region Initialisation
             TableLayoutPanel tlpArticle = new TableLayoutPanel();
@@ -35,13 +35,14 @@ namespace magasin
             tlpArticle.Controls.Add(pbxImage, 0, 0);
             tlpArticle.Controls.Add(tlpInformationArticle, 1, 0);
             tlpArticle.Controls.Add(tlpGestionPanier, 2, 0);
-            tlpArticle.Location = new System.Drawing.Point(12, position*150+14);
+            tlpArticle.Location = new System.Drawing.Point(0, position*150+14);
             tlpArticle.Name = "Article"+nom;
             tlpArticle.Tag = nom;
             tlpArticle.RowCount = 1;
             tlpArticle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             tlpArticle.Size = new System.Drawing.Size(846, 123);
             tlpArticle.TabIndex = 2;
+            tlpArticle.Click += frm.panelProduit_Click;
             #endregion
 
             #region Picture Box Image
@@ -56,6 +57,7 @@ namespace magasin
             pbxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pbxImage.TabIndex = 0;
             pbxImage.TabStop = false;
+            pbxImage.Click += frm.panelProduit_Click;
             #endregion
 
             #region Table Layout Panel Information Article
@@ -75,6 +77,7 @@ namespace magasin
             tlpInformationArticle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             tlpInformationArticle.Size = new System.Drawing.Size(405, 113);
             tlpInformationArticle.TabIndex = 3;
+            tlpInformationArticle.Click += frm.panelProduit_Click;
             #endregion
 
             #region lblTitre
@@ -85,7 +88,8 @@ namespace magasin
             lblTitre.Tag = nom;
             lblTitre.Size = new System.Drawing.Size(102, 13);
             lblTitre.TabIndex = 0;
-            lblTitre.Text = "La tomate de fanfan";
+            lblTitre.Text = nom;
+            lblTitre.Click += frm.panelProduit_Click;
             #endregion
 
             #region lblPrix
@@ -97,6 +101,7 @@ namespace magasin
             lblPrix.Size = new System.Drawing.Size(49, 13);
             lblPrix.TabIndex = 1;
             lblPrix.Text = prix;
+            lblPrix.Click += frm.panelProduit_Click;
             #endregion
 
             #region lblDescription
@@ -108,6 +113,7 @@ namespace magasin
             lblDescription.Size = new System.Drawing.Size(398, 39);
             lblDescription.TabIndex = 2;
             lblDescription.Text = description;
+            lblDescription.Click += frm.panelProduit_Click;
             #endregion
 
             #region Table Layout Panel GestionPanier
@@ -124,6 +130,7 @@ namespace magasin
             tlpGestionPanier.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.10619F));
             tlpGestionPanier.Size = new System.Drawing.Size(186, 113);
             tlpGestionPanier.TabIndex = 4;
+            tlpGestionPanier.Click += frm.panelProduit_Click;
             #endregion
 
             #region nudQuantite
