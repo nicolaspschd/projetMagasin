@@ -133,11 +133,11 @@
             this.Article.ColumnCount = 3;
             this.Article.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.92537F));
             this.Article.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.07462F));
-            this.Article.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 206F));
+            this.Article.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 209F));
             this.Article.Controls.Add(this.pbxImage, 0, 0);
             this.Article.Controls.Add(this.InformationArticle, 1, 0);
             this.Article.Controls.Add(this.GestionPanier, 2, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(17, 14);
+            this.Article.Location = new System.Drawing.Point(17, 14);
             this.Article.Name = "Article";
             this.Article.RowCount = 1;
             this.Article.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -149,7 +149,7 @@
             this.pbxImage.Image = ((System.Drawing.Image)(resources.GetObject("pbxImage.Image")));
             this.pbxImage.Location = new System.Drawing.Point(5, 5);
             this.pbxImage.Name = "pbxImage";
-            this.pbxImage.Size = new System.Drawing.Size(214, 113);
+            this.pbxImage.Size = new System.Drawing.Size(213, 113);
             this.pbxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImage.TabIndex = 0;
             this.pbxImage.TabStop = false;
@@ -161,14 +161,14 @@
             this.InformationArticle.Controls.Add(this.lblTitre, 0, 0);
             this.InformationArticle.Controls.Add(this.lblPrix, 0, 1);
             this.InformationArticle.Controls.Add(this.lblDescription, 0, 2);
-            this.InformationArticle.Location = new System.Drawing.Point(227, 5);
+            this.InformationArticle.Location = new System.Drawing.Point(226, 5);
             this.InformationArticle.Name = "InformationArticle";
             this.InformationArticle.RowCount = 3;
             this.InformationArticle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.InformationArticle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.InformationArticle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
             this.InformationArticle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.InformationArticle.Size = new System.Drawing.Size(405, 113);
+            this.InformationArticle.Size = new System.Drawing.Size(403, 113);
             this.InformationArticle.TabIndex = 3;
             // 
             // lblTitre
@@ -194,7 +194,7 @@
             this.lblDescription.AutoSize = true;
             this.lblDescription.Location = new System.Drawing.Point(3, 49);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(398, 39);
+            this.lblDescription.Size = new System.Drawing.Size(386, 39);
             this.lblDescription.TabIndex = 2;
             this.lblDescription.Text = "La tomate est une espèce de plantes herbacées de la famille des Solanacées, origi" +
     "naire du Nord-Ouest de l\'Amérique du Sud, largement cultivée pour son fruit. Le " +
@@ -206,7 +206,7 @@
             this.GestionPanier.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.GestionPanier.Controls.Add(this.nudQuantite, 0, 0);
             this.GestionPanier.Controls.Add(this.btnPanier, 0, 1);
-            this.GestionPanier.Location = new System.Drawing.Point(640, 5);
+            this.GestionPanier.Location = new System.Drawing.Point(637, 5);
             this.GestionPanier.Name = "GestionPanier";
             this.GestionPanier.RowCount = 2;
             this.GestionPanier.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.8938F));
