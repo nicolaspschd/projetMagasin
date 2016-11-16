@@ -60,8 +60,17 @@ namespace magasin
 
         public void btnPanier_Click(object sender, EventArgs e)
         {
-            panier.Add((sender as Button).Tag.ToString(),
-                Convert.ToInt32(((NumericUpDown)this.Controls.Find("nud" + (sender as Button).Tag.ToString(), true).FirstOrDefault()).Value));
+            string nomArticle = (sender as Button).Tag.ToString();
+            int nbrArticle = Convert.ToInt32(((this.Controls.Find("nudQuantite" + (sender as Button).Tag.ToString(), true).FirstOrDefault()) as NumericUpDown).Value);
+            
+            if (!panier.ContainsKey(nomArticle))
+            {
+                panier.Add(nomArticle, nbrArticle);
+            }
+            else
+            {
+                panier[nomArticle] = nbrArticle;
+            }
         }
 
         private void cbxCategories_SelectedIndexChanged(object sender, EventArgs e)
@@ -83,6 +92,5 @@ namespace magasin
         {
             panelProduit.Focus();
         }
-
     }
 }

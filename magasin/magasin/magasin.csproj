@@ -80,6 +80,7 @@
     <Compile Include="frmMagasin.designer.cs">
       <DependentUpon>frmMagasin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Panier.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sql.cs" />

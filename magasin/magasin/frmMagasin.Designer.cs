@@ -44,7 +44,7 @@
             this.panelPanier = new System.Windows.Forms.Panel();
             this.gbxProduit = new System.Windows.Forms.GroupBox();
             this.lblProduitPanier = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSupprimer = new System.Windows.Forms.Button();
             this.lblSoulignementPanier = new System.Windows.Forms.Label();
             this.lblPanier = new System.Windows.Forms.Label();
             this.btnAcheter = new System.Windows.Forms.Button();
@@ -229,7 +229,7 @@
             // gbxProduit
             // 
             this.gbxProduit.Controls.Add(this.lblProduitPanier);
-            this.gbxProduit.Controls.Add(this.button1);
+            this.gbxProduit.Controls.Add(this.btnSupprimer);
             this.gbxProduit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gbxProduit.Location = new System.Drawing.Point(7, 3);
             this.gbxProduit.Name = "gbxProduit";
@@ -246,16 +246,16 @@
             this.lblProduitPanier.Text = "La tomate de fanfan x15";
             this.lblProduitPanier.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // btnSupprimer
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(86)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(197, 10);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(64, 22);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "X";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnSupprimer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(86)))));
+            this.btnSupprimer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSupprimer.Location = new System.Drawing.Point(197, 10);
+            this.btnSupprimer.Name = "btnSupprimer";
+            this.btnSupprimer.Size = new System.Drawing.Size(64, 22);
+            this.btnSupprimer.TabIndex = 1;
+            this.btnSupprimer.Text = "X";
+            this.btnSupprimer.UseVisualStyleBackColor = false;
             // 
             // lblSoulignementPanier
             // 
@@ -409,7 +409,7 @@
         private System.Windows.Forms.Panel panelPanier;
         private System.Windows.Forms.GroupBox gbxProduit;
         private System.Windows.Forms.Label lblProduitPanier;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSupprimer;
         private System.Windows.Forms.Label lblSoulignementPanier;
         private System.Windows.Forms.Label lblPanier;
         private System.Windows.Forms.Button btnAcheter;
