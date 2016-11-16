@@ -73,7 +73,7 @@ namespace magasin
 
             for (int i = 0; i < Sql.NomProduits.Count; i++)
             {
-                panelProduit.Controls.Add(Article.AfficherArticle(Sql.NomProduits[i], Sql.PrixProduits[i], Sql.DescriptionProduits[i], string.Empty, this, i));
+                panelProduit.Controls.Add(Article.AfficherArticle(Sql.NomProduits[i], Sql.PrixProduits[i], Sql.DescriptionProduits[i], Sql.LienImageProduits[i], this, i));
             }
             cbxCategories.Enabled = true;
             panelProduit.Focus();

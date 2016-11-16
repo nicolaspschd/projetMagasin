@@ -48,7 +48,7 @@ namespace magasin
             #region Picture Box Image
             // pbxImage
             Bitmap btp;
-            btp = (Bitmap)Bitmap.FromFile(@"\\CFPI-R106PC04\Users\VLAJKOVICM_INFO\Desktop\LesImages\Default.jpg");
+            btp = (Bitmap)Bitmap.FromFile(@image);
             pbxImage.Image = btp;
             pbxImage.Location = new System.Drawing.Point(5, 5);
             pbxImage.Name = "pbxImage"+nom;
