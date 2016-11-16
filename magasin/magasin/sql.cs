@@ -17,7 +17,23 @@ namespace magasin
         const string SELECTMDPUSER = "SELECT mdpUser FROM utilisateurs WHERE loginUser=@login";
         const string SELECTLOGINUSER = "SELECT loginUser FROM utilisateurs WHERE loginUser=@login";
         const string SELECTCATEGORIES = "SELECT * FROM categories";
+        const string SELECTPRODUIT = "SELECT nomProduits, prix, description, lienImage FROM produits WHERE idCategorie = @categorie";
         const string INSERTUSER = "INSERT INTO utilisateurs(loginUser, mdpUser) VALUES(@login, @mdp)";
+
+        static public bool conOK()
+        {
+            bool open = false;
+
+            connectionDB.Open();
+
+            if (connectionDB.State == System.Data.ConnectionState.Open)
+            {
+                open = true;
+            }
+
+            connectionDB.Close();
+            return open;
+        }
 
         static public string getSha1(string text)
         {
@@ -36,7 +52,7 @@ namespace magasin
             return stringBuild.ToString();
         }
 
-        static public bool selectMdpUser(string mdp, string login,Label lbl)
+        static public bool selectMdpUser(string mdp, string login, Label lbl)
         {
             bool loguer = false;
             cmd = new MySqlCommand(SELECTMDPUSER, connectionDB);
@@ -150,6 +166,35 @@ namespace magasin
 
             connectionDB.Close();
             return categories;
+        }
+
+        static public void selectProduit(string categorie)
+        {
+            List<string> produits = new List<string>();
+            cmd = new MySqlCommand(SELECTPRODUIT, connectionDB);
+
+            cmd.Parameters.AddWithValue("@categorie", categorie);
+
+            try
+            {
+                connectionDB.Open();
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        produits.Add(reader.GetString(0) + ";" + reader.GetString(1) + ";" + reader.GetString(2) + ";" + reader.GetString(3));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            connectionDB.Close();
         }
     }
 }

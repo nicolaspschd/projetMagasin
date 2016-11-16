@@ -101,6 +101,7 @@
             this.btnPanier.Name = "btnPanier";
             this.btnPanier.Size = new System.Drawing.Size(180, 81);
             this.btnPanier.TabIndex = 5;
+            this.btnPanier.Tag = "Quantite";
             this.btnPanier.Text = "Ajouter au panier";
             this.btnPanier.UseVisualStyleBackColor = false;
             this.btnPanier.Click += new System.EventHandler(this.btnPanier_Click);
@@ -136,7 +137,7 @@
             this.Article.Controls.Add(this.pbxImage, 0, 0);
             this.Article.Controls.Add(this.InformationArticle, 1, 0);
             this.Article.Controls.Add(this.GestionPanier, 2, 0);
-            this.Article.Location = new System.Drawing.Point(12, 14);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(17, 14);
             this.Article.Name = "Article";
             this.Article.RowCount = 1;
             this.Article.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
