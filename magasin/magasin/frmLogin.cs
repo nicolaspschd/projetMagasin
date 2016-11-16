@@ -17,7 +17,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
 using MySql.Data.MySqlClient;
-using System.Drawing;
 
 namespace magasin
 {
@@ -31,13 +30,12 @@ namespace magasin
         bool mdpConfimation = false;
         public string login = string.Empty;
 
-        Sql requeteSQL = new Sql();
 
         frmMagasin magas = new frmMagasin();
         
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (requeteSQL.selectMdpUser(tbxMdp.Text, tbxLogin.Text,lblAvert)) 
+            if (Sql.selectMdpUser(tbxMdp.Text, tbxLogin.Text,lblAvert)) 
             {
                 Console.WriteLine("login");
                 login = tbxLogin.Text;
@@ -88,7 +86,7 @@ namespace magasin
             }
             else
             {
-                if (requeteSQL.selectLoginUser(tbxLogin.Text, tbxMdp.Text, mdpConfimation))
+                if (Sql.selectLoginUser(tbxLogin.Text, tbxMdp.Text, mdpConfimation))
                 {
                     btnLogin_Click(null, null);
                     Console.WriteLine("inscrit");

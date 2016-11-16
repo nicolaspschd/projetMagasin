@@ -21,8 +21,6 @@ namespace magasin
 {
     public partial class frmMagasin : Form
     {
-        Sql requetteDB = new Sql();
-
         public Dictionary<string, int> panier = new Dictionary<string,int>();
 
         public frmMagasin()
@@ -51,7 +49,7 @@ namespace magasin
         private void frmMagasin_Load(object sender, EventArgs e)
         {
             int i = 0;
-            List<string> categories = requetteDB.selectCategories();
+            List<string> categories = Sql.selectCategories();
             while (i < categories.Count)
             {
                 cbxCategories.Items.Add(categories[i]);
@@ -61,8 +59,8 @@ namespace magasin
 
         private void btnPanier_Click(object sender, EventArgs e)
         {
-            panier.Add(((Button)(sender)).Tag.ToString(),
-                (int)((NumericUpDown)this.Controls.Find("nud" + ((Button)(sender)).Tag.ToString(), true).FirstOrDefault()).Value);
+            panier.Add((sender as Button).Tag.ToString(),
+                Convert.ToInt32(((NumericUpDown)this.Controls.Find("nud" + ((Button)(sender)).Tag.ToString(), true).FirstOrDefault()).Value));
         }
 
     }

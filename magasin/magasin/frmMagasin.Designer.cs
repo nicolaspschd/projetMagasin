@@ -114,6 +114,7 @@
             this.nudQuantite.Name = "nudQuantite";
             this.nudQuantite.Size = new System.Drawing.Size(180, 22);
             this.nudQuantite.TabIndex = 4;
+            this.nudQuantite.Tag = "1";
             this.nudQuantite.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panelProduit
@@ -131,7 +132,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.92537F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.07462F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 194F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tableLayoutPanel1.Controls.Add(this.pbxImage, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 2, 0);
@@ -147,7 +148,7 @@
             this.pbxImage.Image = ((System.Drawing.Image)(resources.GetObject("pbxImage.Image")));
             this.pbxImage.Location = new System.Drawing.Point(5, 5);
             this.pbxImage.Name = "pbxImage";
-            this.pbxImage.Size = new System.Drawing.Size(218, 113);
+            this.pbxImage.Size = new System.Drawing.Size(216, 113);
             this.pbxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImage.TabIndex = 0;
             this.pbxImage.TabStop = false;
@@ -159,14 +160,14 @@
             this.tableLayoutPanel2.Controls.Add(this.lblTitre, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.lblPrix, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.lblDescription, 0, 2);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(231, 5);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(229, 5);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(413, 113);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(409, 113);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
             // lblTitre
@@ -204,7 +205,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.nudQuantite, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnPanier, 0, 1);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(652, 5);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(646, 5);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.8938F));

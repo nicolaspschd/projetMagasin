@@ -9,16 +9,17 @@ using System.Security.Cryptography;
 
 namespace magasin
 {
-    class Sql
+    static class Sql
     {
-        MySqlConnection connectionDB = new MySqlConnection("server=127.0.0.1;database=magasin;user=root;password=;");
-        MySqlCommand cmd;
+        static MySqlConnection connectionDB = new MySqlConnection("server=10.134.97.69;database=magasin;user=root;password=;");
+        static MySqlCommand cmd;
 
         const string SELECTMDPUSER = "SELECT mdpUser FROM utilisateurs WHERE loginUser=@login";
         const string SELECTLOGINUSER = "SELECT loginUser FROM utilisateurs WHERE loginUser=@login";
+        const string SELECTCATEGORIES = "SELECT * FROM categories";
         const string INSERTUSER = "INSERT INTO utilisateurs(loginUser, mdpUser) VALUES(@login, @mdp)";
 
-        public string getSha1(string text)
+        static public string getSha1(string text)
         {
             byte[] resultat;
             StringBuilder stringBuild = new StringBuilder();
@@ -35,7 +36,7 @@ namespace magasin
             return stringBuild.ToString();
         }
 
-        public bool selectMdpUser(string mdp, string login,Label lbl)
+        static public bool selectMdpUser(string mdp, string login,Label lbl)
         {
             bool loguer = false;
             cmd = new MySqlCommand(SELECTMDPUSER, connectionDB);
@@ -76,7 +77,7 @@ namespace magasin
             return loguer;
         }
 
-        public bool selectLoginUser(string login, string mdp, bool mdpConfirm)
+        static public bool selectLoginUser(string login, string mdp, bool mdpConfirm)
         {
             bool resultat = false;
 
@@ -127,9 +128,9 @@ namespace magasin
             return resultat;
         }
 
-        public List<string> selectCategories()
+        static public List<string> selectCategories()
         {
-            cmd = new MySqlCommand("SELECT * FROM categories", connectionDB);
+            cmd = new MySqlCommand(SELECTCATEGORIES, connectionDB);
             List<string> categories = new List<string>();
             try
             {
