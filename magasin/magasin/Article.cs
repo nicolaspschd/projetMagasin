@@ -22,7 +22,7 @@ namespace magasin
             Button btnPanier = new Button();
             Label lblDescription = new Label();
             NumericUpDown nudQuantite = new NumericUpDown();
-            
+            prix = (Math.Round(Convert.ToDecimal(prix) / 0.05m, 0) * 0.05m).ToString();
             #endregion
 
             #region Table Layout Panel Article
@@ -100,7 +100,7 @@ namespace magasin
             lblPrix.Tag = nom;
             lblPrix.Size = new System.Drawing.Size(49, 13);
             lblPrix.TabIndex = 1;
-            lblPrix.Text = prix;
+            lblPrix.Text = String.Format("{0:0.00}", Convert.ToDecimal(prix)) +" CHF";
             lblPrix.Click += frm.panelProduit_Click;
             #endregion
 
