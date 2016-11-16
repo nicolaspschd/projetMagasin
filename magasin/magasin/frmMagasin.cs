@@ -22,6 +22,7 @@ namespace magasin
     public partial class frmMagasin : Form
     {
         public Dictionary<string, int> panier = new Dictionary<string, int>();
+        int nbrPanier = 0;
 
         public frmMagasin()
         {
@@ -48,6 +49,7 @@ namespace magasin
 
         private void frmMagasin_Load(object sender, EventArgs e)
         {
+            panelPanier.Controls.Clear();
             int i = 0;
             List<string> categories = Sql.selectCategories();
             while (i < categories.Count)
@@ -66,6 +68,8 @@ namespace magasin
             if (!panier.ContainsKey(nomArticle))
             {
                 panier.Add(nomArticle, nbrArticle);
+                panelPanier.Controls.Add(Panier.AfficherPanier(nomArticle, nbrArticle, nbrPanier));
+                nbrPanier++;
             }
             else
             {

@@ -53,6 +53,7 @@
             this.tbxRecherche = new System.Windows.Forms.TextBox();
             this.lblRecherche = new System.Windows.Forms.Label();
             this.pbxRecherche = new System.Windows.Forms.PictureBox();
+            this.lblNbrPanier = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantite)).BeginInit();
             this.panelProduit.SuspendLayout();
             this.ArticleNatif.SuspendLayout();
@@ -135,7 +136,7 @@
             this.ArticleNatif.ColumnCount = 3;
             this.ArticleNatif.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.92537F));
             this.ArticleNatif.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.07462F));
-            this.ArticleNatif.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 209F));
+            this.ArticleNatif.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 212F));
             this.ArticleNatif.Controls.Add(this.pbxImage, 0, 0);
             this.ArticleNatif.Controls.Add(this.InformationArticle, 1, 0);
             this.ArticleNatif.Controls.Add(this.GestionPanier, 2, 0);
@@ -151,7 +152,7 @@
             this.pbxImage.Image = ((System.Drawing.Image)(resources.GetObject("pbxImage.Image")));
             this.pbxImage.Location = new System.Drawing.Point(5, 5);
             this.pbxImage.Name = "pbxImage";
-            this.pbxImage.Size = new System.Drawing.Size(213, 113);
+            this.pbxImage.Size = new System.Drawing.Size(212, 113);
             this.pbxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImage.TabIndex = 0;
             this.pbxImage.TabStop = false;
@@ -163,14 +164,14 @@
             this.InformationArticle.Controls.Add(this.lblTitre, 0, 0);
             this.InformationArticle.Controls.Add(this.lblPrix, 0, 1);
             this.InformationArticle.Controls.Add(this.lblDescription, 0, 2);
-            this.InformationArticle.Location = new System.Drawing.Point(226, 5);
+            this.InformationArticle.Location = new System.Drawing.Point(225, 5);
             this.InformationArticle.Name = "InformationArticle";
             this.InformationArticle.RowCount = 3;
             this.InformationArticle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.InformationArticle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.InformationArticle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
             this.InformationArticle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.InformationArticle.Size = new System.Drawing.Size(403, 113);
+            this.InformationArticle.Size = new System.Drawing.Size(401, 113);
             this.InformationArticle.TabIndex = 3;
             // 
             // lblTitre
@@ -208,7 +209,7 @@
             this.GestionPanier.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.GestionPanier.Controls.Add(this.nudQuantite, 0, 0);
             this.GestionPanier.Controls.Add(this.btnPanier, 0, 1);
-            this.GestionPanier.Location = new System.Drawing.Point(637, 5);
+            this.GestionPanier.Location = new System.Drawing.Point(634, 5);
             this.GestionPanier.Name = "GestionPanier";
             this.GestionPanier.RowCount = 2;
             this.GestionPanier.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.8938F));
@@ -228,6 +229,7 @@
             // 
             // gbxProduit
             // 
+            this.gbxProduit.Controls.Add(this.lblNbrPanier);
             this.gbxProduit.Controls.Add(this.lblProduitPanier);
             this.gbxProduit.Controls.Add(this.btnSupprimer);
             this.gbxProduit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -241,7 +243,7 @@
             // 
             this.lblProduitPanier.Location = new System.Drawing.Point(6, 10);
             this.lblProduitPanier.Name = "lblProduitPanier";
-            this.lblProduitPanier.Size = new System.Drawing.Size(185, 25);
+            this.lblProduitPanier.Size = new System.Drawing.Size(127, 25);
             this.lblProduitPanier.TabIndex = 0;
             this.lblProduitPanier.Text = "La tomate de fanfan x15";
             this.lblProduitPanier.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -350,6 +352,15 @@
             this.pbxRecherche.TabIndex = 16;
             this.pbxRecherche.TabStop = false;
             // 
+            // lblNbrPanier
+            // 
+            this.lblNbrPanier.Location = new System.Drawing.Point(139, 10);
+            this.lblNbrPanier.Name = "lblNbrPanier";
+            this.lblNbrPanier.Size = new System.Drawing.Size(52, 25);
+            this.lblNbrPanier.TabIndex = 0;
+            this.lblNbrPanier.Text = "un nombre";
+            this.lblNbrPanier.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmMagasin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -418,6 +429,7 @@
         private System.Windows.Forms.TextBox tbxRecherche;
         private System.Windows.Forms.Label lblRecherche;
         private System.Windows.Forms.PictureBox pbxRecherche;
+        private System.Windows.Forms.Label lblNbrPanier;
     }
 }
 

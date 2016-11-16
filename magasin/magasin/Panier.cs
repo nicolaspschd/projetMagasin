@@ -7,21 +7,25 @@ using System.Windows.Forms;
 
 namespace magasin
 {
-    class Panier
+    static class Panier
     {
-        public GroupBox AfficherPanier(string nomProduit, int nombreProduit, int i)
+        static public GroupBox AfficherPanier(string nomProduit, int nombreProduit, int position)
         {
             GroupBox gbxProduit = new GroupBox();
             Label lblProduitPanier = new Label();
             Button btnSupprimer = new Button();
+            Label lblNbrPanier = new Label();
             // 
             // gbxProduit
             // 
             gbxProduit.Controls.Add(lblProduitPanier);
             gbxProduit.Controls.Add(btnSupprimer);
             gbxProduit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            gbxProduit.Location = new System.Drawing.Point(7, 3);
-            gbxProduit.Name = "gbxProduit";
+            gbxProduit.Location = new System.Drawing.Point(7, position * 40 + 10);
+            gbxProduit.Controls.Add(lblProduitPanier);
+            gbxProduit.Controls.Add(lblNbrPanier);
+            gbxProduit.Controls.Add(btnSupprimer);
+            gbxProduit.Name = "gbx" + nombreProduit;
             gbxProduit.Size = new System.Drawing.Size(267, 38);
             gbxProduit.TabIndex = 2;
             gbxProduit.TabStop = false;
@@ -31,9 +35,9 @@ namespace magasin
             // 
             lblProduitPanier.Location = new System.Drawing.Point(6, 10);
             lblProduitPanier.Name = "lblProduitPanier";
-            lblProduitPanier.Size = new System.Drawing.Size(185, 25);
+            lblProduitPanier.Size = new System.Drawing.Size(127, 25);
             lblProduitPanier.TabIndex = 0;
-            lblProduitPanier.Text = "La tomate de fanfan x15";
+            lblProduitPanier.Text = nomProduit;
             lblProduitPanier.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 
             // 
@@ -42,11 +46,18 @@ namespace magasin
             btnSupprimer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(86)))));
             btnSupprimer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             btnSupprimer.Location = new System.Drawing.Point(197, 10);
-            btnSupprimer.Name = "btnSupprimer";
+            btnSupprimer.Name = "btn" + nomProduit;
             btnSupprimer.Size = new System.Drawing.Size(64, 22);
             btnSupprimer.TabIndex = 1;
             btnSupprimer.Text = "X";
             btnSupprimer.UseVisualStyleBackColor = false;
+
+            lblNbrPanier.Location = new System.Drawing.Point(139, 10);
+            lblNbrPanier.Name = "lblNbrPanier" + nomProduit;
+            lblNbrPanier.Size = new System.Drawing.Size(52, 25);
+            lblNbrPanier.TabIndex = 0;
+            lblNbrPanier.Text = " x" + nombreProduit.ToString();
+            lblNbrPanier.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 
             return gbxProduit;
         }
