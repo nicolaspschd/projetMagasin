@@ -68,12 +68,14 @@ namespace magasin
             if (!panier.ContainsKey(nomArticle))
             {
                 panier.Add(nomArticle, nbrArticle);
-                panelPanier.Controls.Add(Panier.AfficherPanier(nomArticle, nbrArticle, nbrPanier));
+                panelPanier.Controls.Add(Panier.AfficherPanier(nomArticle, nbrArticle, nbrPanier, this));
                 nbrPanier++;
             }
             else
             {
                 panier[nomArticle] = nbrArticle;
+                Label lblNbr = this.Controls.Find("lblNbrPanier" + ((sender as Button).Tag.ToString()), true).FirstOrDefault() as Label;
+                lblNbr.Text = " x"+nbrArticle.ToString();
             }
         }
 
@@ -110,5 +112,9 @@ namespace magasin
             panelProduit.Focus();
         }
 
+        public void btnSupprimerArticle_Click(object sender, EventArgs e)
+        {
+            this.Controls.RemoveByKey((sender as Button).Tag.ToString());
+        }
     }
 }

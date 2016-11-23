@@ -43,6 +43,7 @@
             this.GestionPanier = new System.Windows.Forms.TableLayoutPanel();
             this.panelPanier = new System.Windows.Forms.Panel();
             this.gbxProduit = new System.Windows.Forms.GroupBox();
+            this.lblNbrPanier = new System.Windows.Forms.Label();
             this.lblProduitPanier = new System.Windows.Forms.Label();
             this.btnSupprimer = new System.Windows.Forms.Button();
             this.lblSoulignementPanier = new System.Windows.Forms.Label();
@@ -53,7 +54,6 @@
             this.tbxRecherche = new System.Windows.Forms.TextBox();
             this.lblRecherche = new System.Windows.Forms.Label();
             this.pbxRecherche = new System.Windows.Forms.PictureBox();
-            this.lblNbrPanier = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantite)).BeginInit();
             this.panelProduit.SuspendLayout();
             this.ArticleNatif.SuspendLayout();
@@ -74,7 +74,7 @@
             this.btnFrmLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(208)))), ((int)(((byte)(192)))));
             this.btnFrmLogin.Location = new System.Drawing.Point(885, 497);
             this.btnFrmLogin.Name = "btnFrmLogin";
-            this.btnFrmLogin.Size = new System.Drawing.Size(275, 80);
+            this.btnFrmLogin.Size = new System.Drawing.Size(304, 80);
             this.btnFrmLogin.TabIndex = 7;
             this.btnFrmLogin.Text = "Login";
             this.btnFrmLogin.UseVisualStyleBackColor = false;
@@ -136,7 +136,7 @@
             this.ArticleNatif.ColumnCount = 3;
             this.ArticleNatif.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.92537F));
             this.ArticleNatif.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.07462F));
-            this.ArticleNatif.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 212F));
+            this.ArticleNatif.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 215F));
             this.ArticleNatif.Controls.Add(this.pbxImage, 0, 0);
             this.ArticleNatif.Controls.Add(this.InformationArticle, 1, 0);
             this.ArticleNatif.Controls.Add(this.GestionPanier, 2, 0);
@@ -152,7 +152,7 @@
             this.pbxImage.Image = ((System.Drawing.Image)(resources.GetObject("pbxImage.Image")));
             this.pbxImage.Location = new System.Drawing.Point(5, 5);
             this.pbxImage.Name = "pbxImage";
-            this.pbxImage.Size = new System.Drawing.Size(212, 113);
+            this.pbxImage.Size = new System.Drawing.Size(211, 113);
             this.pbxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImage.TabIndex = 0;
             this.pbxImage.TabStop = false;
@@ -164,14 +164,14 @@
             this.InformationArticle.Controls.Add(this.lblTitre, 0, 0);
             this.InformationArticle.Controls.Add(this.lblPrix, 0, 1);
             this.InformationArticle.Controls.Add(this.lblDescription, 0, 2);
-            this.InformationArticle.Location = new System.Drawing.Point(225, 5);
+            this.InformationArticle.Location = new System.Drawing.Point(224, 5);
             this.InformationArticle.Name = "InformationArticle";
             this.InformationArticle.RowCount = 3;
             this.InformationArticle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.InformationArticle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.InformationArticle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
             this.InformationArticle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.InformationArticle.Size = new System.Drawing.Size(401, 113);
+            this.InformationArticle.Size = new System.Drawing.Size(399, 113);
             this.InformationArticle.TabIndex = 3;
             // 
             // lblTitre
@@ -209,7 +209,7 @@
             this.GestionPanier.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.GestionPanier.Controls.Add(this.nudQuantite, 0, 0);
             this.GestionPanier.Controls.Add(this.btnPanier, 0, 1);
-            this.GestionPanier.Location = new System.Drawing.Point(634, 5);
+            this.GestionPanier.Location = new System.Drawing.Point(631, 5);
             this.GestionPanier.Name = "GestionPanier";
             this.GestionPanier.RowCount = 2;
             this.GestionPanier.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.8938F));
@@ -224,7 +224,7 @@
             this.panelPanier.Controls.Add(this.gbxProduit);
             this.panelPanier.Location = new System.Drawing.Point(885, 68);
             this.panelPanier.Name = "panelPanier";
-            this.panelPanier.Size = new System.Drawing.Size(282, 337);
+            this.panelPanier.Size = new System.Drawing.Size(308, 337);
             this.panelPanier.TabIndex = 9;
             // 
             // gbxProduit
@@ -235,9 +235,18 @@
             this.gbxProduit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gbxProduit.Location = new System.Drawing.Point(7, 3);
             this.gbxProduit.Name = "gbxProduit";
-            this.gbxProduit.Size = new System.Drawing.Size(267, 38);
+            this.gbxProduit.Size = new System.Drawing.Size(296, 38);
             this.gbxProduit.TabIndex = 2;
             this.gbxProduit.TabStop = false;
+            // 
+            // lblNbrPanier
+            // 
+            this.lblNbrPanier.Location = new System.Drawing.Point(139, 10);
+            this.lblNbrPanier.Name = "lblNbrPanier";
+            this.lblNbrPanier.Size = new System.Drawing.Size(52, 25);
+            this.lblNbrPanier.TabIndex = 0;
+            this.lblNbrPanier.Text = "un nombre";
+            this.lblNbrPanier.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblProduitPanier
             // 
@@ -290,7 +299,7 @@
             this.btnAcheter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(208)))), ((int)(((byte)(192)))));
             this.btnAcheter.Location = new System.Drawing.Point(885, 411);
             this.btnAcheter.Name = "btnAcheter";
-            this.btnAcheter.Size = new System.Drawing.Size(275, 80);
+            this.btnAcheter.Size = new System.Drawing.Size(304, 80);
             this.btnAcheter.TabIndex = 6;
             this.btnAcheter.Text = "Acheter";
             this.btnAcheter.UseVisualStyleBackColor = false;
@@ -328,7 +337,6 @@
             this.tbxRecherche.Name = "tbxRecherche";
             this.tbxRecherche.Size = new System.Drawing.Size(213, 25);
             this.tbxRecherche.TabIndex = 3;
-            this.tbxRecherche.Text = "C\'est du test tout ces lettres";
             // 
             // lblRecherche
             // 
@@ -353,21 +361,12 @@
             this.pbxRecherche.TabStop = false;
             this.pbxRecherche.Click += new System.EventHandler(this.pbxRecherche_Click);
             // 
-            // lblNbrPanier
-            // 
-            this.lblNbrPanier.Location = new System.Drawing.Point(139, 10);
-            this.lblNbrPanier.Name = "lblNbrPanier";
-            this.lblNbrPanier.Size = new System.Drawing.Size(52, 25);
-            this.lblNbrPanier.TabIndex = 0;
-            this.lblNbrPanier.Text = "un nombre";
-            this.lblNbrPanier.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // frmMagasin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(86)))));
-            this.ClientSize = new System.Drawing.Size(1172, 774);
+            this.ClientSize = new System.Drawing.Size(1205, 774);
             this.Controls.Add(this.pbxRecherche);
             this.Controls.Add(this.lblRecherche);
             this.Controls.Add(this.tbxRecherche);
