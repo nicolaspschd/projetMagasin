@@ -49,7 +49,7 @@ namespace magasin
             // pbxImage
             Bitmap btp;
             btp = (Bitmap)Bitmap.FromFile(@image);
-            pbxImage.Image = btp;
+            pbxImage.Image = FTPdownloader.Download("Banane.png");
             pbxImage.Location = new System.Drawing.Point(5, 5);
             pbxImage.Name = "pbxImage"+nom;
             pbxImage.Tag = nom;
