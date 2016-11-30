@@ -98,6 +98,7 @@ namespace magasin
         {
             panelProduit.Focus();
         }
+
         private void pbxRecherche_Click(object sender, EventArgs e)
         {
             cbxCategories.Enabled = false;

@@ -11,9 +11,9 @@ namespace magasin
 {
     static class FTPdownloader
     {
-        const string FTPUSERID = "pi";
-        const string FTPPASSWORD = "fondue123";
-        const string URI = "ftp://10.134.97.69/home/pi/Desktop/ftp/";
+        const string FTPUSERID = "ProjetMagasin";
+        const string FTPPASSWORD = "deuXsept";
+        const string URI = "ftp://ProjetMagasin@10.134.96.109/ProjetMagasin/";
 
         static public Image Download(string fileName)
         {
@@ -25,7 +25,6 @@ namespace magasin
                 reqFTP.Method = WebRequestMethods.Ftp.DownloadFile;
                 reqFTP.UseBinary = true;
                 reqFTP.Credentials = new NetworkCredential(FTPUSERID, FTPPASSWORD);
-                Console.WriteLine(reqFTP.ToString());
                 FtpWebResponse response = reqFTP.GetResponse() as FtpWebResponse;
                 Stream ftpStream = response.GetResponseStream();
 
@@ -36,7 +35,6 @@ namespace magasin
             }
             catch (Exception ex)
             {
-                
                 Console.WriteLine(ex.Message);
             }
             return tmpImage;

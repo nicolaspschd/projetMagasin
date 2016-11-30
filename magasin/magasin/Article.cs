@@ -47,9 +47,7 @@ namespace magasin
 
             #region Picture Box Image
             // pbxImage
-            Bitmap btp;
-            btp = (Bitmap)Bitmap.FromFile(@image);
-            pbxImage.Image = FTPdownloader.Download("Banane.png");
+            pbxImage.Image = FTPdownloader.Download(image);
             pbxImage.Location = new System.Drawing.Point(5, 5);
             pbxImage.Name = "pbxImage"+nom;
             pbxImage.Tag = nom;
