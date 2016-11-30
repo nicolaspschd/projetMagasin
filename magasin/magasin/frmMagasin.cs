@@ -101,16 +101,23 @@ namespace magasin
 
         private void pbxRecherche_Click(object sender, EventArgs e)
         {
-            cbxCategories.Enabled = false;
-            panelProduit.Controls.Clear();
-            Sql.selectProduit(tbxRecherche.Text);
-            for (int i = 0; i < Sql.NomProduits.Count; i++)
+            if (tbxRecherche.Text != string.Empty)
             {
-                panelProduit.Controls.Add(Article.AfficherArticle(Sql.NomProduits[i], Sql.PrixProduits[i], Sql.DescriptionProduits[i], Sql.LienImageProduits[i], this, i));
+                cbxCategories.Enabled = false;
+                panelProduit.Controls.Clear();
+                Sql.selectProduit(tbxRecherche.Text);
+                for (int i = 0; i < Sql.NomProduits.Count; i++)
+                {
+                    panelProduit.Controls.Add(Article.AfficherArticle(Sql.NomProduits[i], Sql.PrixProduits[i], Sql.DescriptionProduits[i], Sql.LienImageProduits[i], this, i));
+                }
+                Console.WriteLine(Sql.NomProduits.Count.ToString());
+                cbxCategories.Enabled = true;
+                panelProduit.Focus();
             }
-            Console.WriteLine(Sql.NomProduits.Count.ToString());
-            cbxCategories.Enabled = true;
-            panelProduit.Focus();
+            else
+            {
+                cbxCategories_SelectedIndexChanged(null, null);
+            }
         }
 
         public void btnSupprimerArticle_Click(object sender, EventArgs e)

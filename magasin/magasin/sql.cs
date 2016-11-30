@@ -242,10 +242,6 @@ namespace magasin
             LienImageProduits.Clear();
 
             cmd = new MySqlCommand("SELECT nomProduits,prix,description,lienImage FROM produits WHERE nomProduits LIKE '%"+search+"%'", connectionDB);
-        //    Console.WriteLine("la recherche est : |" + search + "|");
-          //  cmd.Parameters.AddWithValue("@search", search);
-         //   Console.WriteLine(cmd.CommandText);
-
             try
             {
                 connectionDB.Open();
