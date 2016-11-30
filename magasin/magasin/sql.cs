@@ -11,7 +11,7 @@ namespace magasin
 {
     static class Sql
     {
-        static MySqlConnection connectionDB = new MySqlConnection("server=10.134.97.69;database=magasin;user=root;password=fondue;");
+        static MySqlConnection connectionDB = new MySqlConnection("server=10.134.96.109;database=magasin;user=MagasinUser;password=fondue;");
         static MySqlCommand cmd;
 
         static List<string> _nomProduits = new List<string>();

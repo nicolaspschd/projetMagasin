@@ -64,18 +64,25 @@ namespace magasin
         {
             string nomArticle = (sender as Button).Tag.ToString();
             int nbrArticle = Convert.ToInt32(((this.Controls.Find("nudQuantite" + (sender as Button).Tag.ToString(), true).FirstOrDefault()) as NumericUpDown).Value);
-            
+
             if (!panier.ContainsKey(nomArticle))
             {
-                panier.Add(nomArticle, nbrArticle);
-                panelPanier.Controls.Add(Panier.AfficherPanier(nomArticle, nbrArticle, nbrPanier, this));
+                panelPanier.Controls.Clear();
+                panier.Add(nomArticle, nbrArticle);  
+
+                for (int i = 0; i <= nbrPanier; i++)
+                {
+                    nomArticle = panier.ElementAt(i).Key;
+                    nbrArticle = panier.ElementAt(i).Value;
+                    panelPanier.Controls.Add(Panier.AfficherPanier(nomArticle, nbrArticle, nbrPanier, this));
+                }
                 nbrPanier++;
             }
             else
             {
                 panier[nomArticle] = nbrArticle;
-                Label lblNbr = this.Controls.Find("lblNbrPanier" + ((sender as Button).Tag.ToString()), true).FirstOrDefault() as Label;
-                lblNbr.Text = " x"+nbrArticle.ToString();
+                Label lblNbr = panelPanier.Controls.Find("lblNbrPanier" + ((sender as Button).Tag.ToString()), true).FirstOrDefault() as Label;
+                lblNbr.Text = " x"  + nbrArticle.ToString();
             }
         }
 
@@ -122,12 +129,9 @@ namespace magasin
 
         public void btnSupprimerArticle_Click(object sender, EventArgs e)
         {
-            if (this.Controls.ContainsKey((sender as Button).Tag.ToString()))
-            {
-                Console.WriteLine("true");
-            }
-            Console.WriteLine((sender as Button).Tag.ToString());
-            this.Controls.RemoveByKey((sender as Button).Tag.ToString());
+            panelPanier.Controls.RemoveByKey("gbx" + (sender as Button).Tag.ToString());
+            panier.Remove((sender as Button).Tag.ToString());
+            nbrPanier--;
         }
     }
 }

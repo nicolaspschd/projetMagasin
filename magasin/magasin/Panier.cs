@@ -9,15 +9,14 @@ namespace magasin
 {
     static class Panier
     {
-        static public GroupBox AfficherPanier(string nomProduit, int nombreProduit, int position, frmMagasin magas)
-        {
+        static public GroupBox AfficherPanier(string nomProduit, int nombreProduit, int position, frmMagasin magas){
+            
             GroupBox gbxProduit = new GroupBox();
             Label lblProduitPanier = new Label();
             Button btnSupprimer = new Button();
             Label lblNbrPanier = new Label();
-            // 
-            // gbxProduit
-            // 
+
+            #region gbxProduit
             gbxProduit.Controls.Add(lblProduitPanier);
             gbxProduit.Controls.Add(btnSupprimer);
             gbxProduit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -29,8 +28,7 @@ namespace magasin
             gbxProduit.Size = new System.Drawing.Size(267, 38);
             gbxProduit.TabIndex = 2;
             gbxProduit.TabStop = false;
-
-            Console.WriteLine(gbxProduit.Name);
+            #endregion
 
             #region lblProduitPanier
             lblProduitPanier.Location = new System.Drawing.Point(6, 10);
@@ -46,7 +44,7 @@ namespace magasin
             btnSupprimer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             btnSupprimer.Location = new System.Drawing.Point(197, 10);
             btnSupprimer.Name = "btn" + nomProduit;
-            btnSupprimer.Tag = gbxProduit.Name;
+            btnSupprimer.Tag = nomProduit;
             btnSupprimer.Size = new System.Drawing.Size(64, 22);
             btnSupprimer.TabIndex = 1;
             btnSupprimer.Text = "X";
