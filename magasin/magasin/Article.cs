@@ -8,9 +8,10 @@ using System.Drawing;
 
 namespace magasin
 {
-   static class Article
+    static class Article
     {
-        static public TableLayoutPanel AfficherArticle(string nom, string prix, string description, string image, frmMagasin frm,int position)
+        static Image ImageDefault = FTPdownloader.Download("default.jpg");
+        static public TableLayoutPanel AfficherArticle(string nom, string prix, string description, string image, frmMagasin frm, int position)
         {
             #region Initialisation
             TableLayoutPanel tlpArticle = new TableLayoutPanel();
@@ -35,8 +36,8 @@ namespace magasin
             tlpArticle.Controls.Add(pbxImage, 0, 0);
             tlpArticle.Controls.Add(tlpInformationArticle, 1, 0);
             tlpArticle.Controls.Add(tlpGestionPanier, 2, 0);
-            tlpArticle.Location = new System.Drawing.Point(0, position*150+14);
-            tlpArticle.Name = "Article"+nom;
+            tlpArticle.Location = new System.Drawing.Point(0, position * 150 + 14);
+            tlpArticle.Name = "Article" + nom;
             tlpArticle.Tag = nom;
             tlpArticle.RowCount = 1;
             tlpArticle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -47,9 +48,12 @@ namespace magasin
 
             #region Picture Box Image
             // pbxImage
-            pbxImage.Image = FTPdownloader.Download(image);
+            if (image == "default.jpg")
+                pbxImage.Image = ImageDefault;
+            else
+                pbxImage.Image = FTPdownloader.Download(image);
             pbxImage.Location = new System.Drawing.Point(5, 5);
-            pbxImage.Name = "pbxImage"+nom;
+            pbxImage.Name = "pbxImage" + nom;
             pbxImage.Tag = nom;
             pbxImage.Size = new System.Drawing.Size(214, 113);
             pbxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -66,7 +70,7 @@ namespace magasin
             tlpInformationArticle.Controls.Add(lblPrix, 0, 1);
             tlpInformationArticle.Controls.Add(lblDescription, 0, 2);
             tlpInformationArticle.Location = new System.Drawing.Point(227, 5);
-            tlpInformationArticle.Name = "InformationArticle"+nom;
+            tlpInformationArticle.Name = "InformationArticle" + nom;
             tlpInformationArticle.Tag = nom;
             tlpInformationArticle.RowCount = 3;
             tlpInformationArticle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -82,7 +86,7 @@ namespace magasin
             // lblTitre
             lblTitre.AutoSize = true;
             lblTitre.Location = new System.Drawing.Point(3, 0);
-            lblTitre.Name = "lblTitre"+nom;
+            lblTitre.Name = "lblTitre" + nom;
             lblTitre.Tag = nom;
             lblTitre.Size = new System.Drawing.Size(102, 13);
             lblTitre.TabIndex = 0;
@@ -94,11 +98,11 @@ namespace magasin
             // lblPrix
             lblPrix.AutoSize = true;
             lblPrix.Location = new System.Drawing.Point(3, 23);
-            lblPrix.Name = "lblPrix"+nom;
+            lblPrix.Name = "lblPrix" + nom;
             lblPrix.Tag = nom;
             lblPrix.Size = new System.Drawing.Size(49, 13);
             lblPrix.TabIndex = 1;
-            lblPrix.Text = String.Format("{0:0.00}", Convert.ToDecimal(prix)) +" CHF";
+            lblPrix.Text = String.Format("{0:0.00}", Convert.ToDecimal(prix)) + " CHF";
             lblPrix.Click += frm.panelProduit_Click;
             #endregion
 
@@ -106,7 +110,7 @@ namespace magasin
             // lblDescription
             lblDescription.AutoSize = true;
             lblDescription.Location = new System.Drawing.Point(3, 49);
-            lblDescription.Name = "lblDescription"+nom;
+            lblDescription.Name = "lblDescription" + nom;
             lblDescription.Tag = nom;
             lblDescription.Size = new System.Drawing.Size(398, 39);
             lblDescription.TabIndex = 2;
@@ -121,7 +125,7 @@ namespace magasin
             tlpGestionPanier.Controls.Add(nudQuantite, 0, 0);
             tlpGestionPanier.Controls.Add(btnPanier, 0, 1);
             tlpGestionPanier.Location = new System.Drawing.Point(640, 5);
-            tlpGestionPanier.Name = "GestionPanier"+nom;
+            tlpGestionPanier.Name = "GestionPanier" + nom;
             tlpGestionPanier.Tag = nom;
             tlpGestionPanier.RowCount = 2;
             tlpGestionPanier.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.8938F));
@@ -137,7 +141,7 @@ namespace magasin
             nudQuantite.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             nudQuantite.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(208)))), ((int)(((byte)(192)))));
             nudQuantite.Location = new System.Drawing.Point(3, 3);
-            nudQuantite.Name = "nudQuantite"+nom;
+            nudQuantite.Name = "nudQuantite" + nom;
             nudQuantite.Tag = nom;
             nudQuantite.Size = new System.Drawing.Size(180, 22);
             nudQuantite.TabIndex = 4;
@@ -153,7 +157,7 @@ namespace magasin
             btnPanier.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             btnPanier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(208)))), ((int)(((byte)(192)))));
             btnPanier.Location = new System.Drawing.Point(3, 29);
-            btnPanier.Name = "btnPanier"+nom;
+            btnPanier.Name = "btnPanier" + nom;
             btnPanier.Tag = nom;
             btnPanier.Size = new System.Drawing.Size(180, 81);
             btnPanier.TabIndex = 5;
