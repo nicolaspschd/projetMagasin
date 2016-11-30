@@ -25,10 +25,12 @@ namespace magasin
             gbxProduit.Controls.Add(lblProduitPanier);
             gbxProduit.Controls.Add(lblNbrPanier);
             gbxProduit.Controls.Add(btnSupprimer);
-            gbxProduit.Name = "gbx" + nombreProduit;
+            gbxProduit.Name = "gbx" + nomProduit;
             gbxProduit.Size = new System.Drawing.Size(267, 38);
             gbxProduit.TabIndex = 2;
             gbxProduit.TabStop = false;
+
+            Console.WriteLine(gbxProduit.Name);
 
             #region lblProduitPanier
             lblProduitPanier.Location = new System.Drawing.Point(6, 10);

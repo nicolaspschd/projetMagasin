@@ -115,6 +115,11 @@ namespace magasin
 
         public void btnSupprimerArticle_Click(object sender, EventArgs e)
         {
+            if (this.Controls.ContainsKey((sender as Button).Tag.ToString()))
+            {
+                Console.WriteLine("true");
+            }
+            Console.WriteLine((sender as Button).Tag.ToString());
             this.Controls.RemoveByKey((sender as Button).Tag.ToString());
         }
     }
