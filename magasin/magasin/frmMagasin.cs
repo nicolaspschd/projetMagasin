@@ -62,28 +62,39 @@ namespace magasin
 
         public void btnPanier_Click(object sender, EventArgs e)
         {
+
             string nomArticle = (sender as Button).Tag.ToString();
             int nbrArticle = Convert.ToInt32(((this.Controls.Find("nudQuantite" + (sender as Button).Tag.ToString(), true).FirstOrDefault()) as NumericUpDown).Value);
-
-            if (!panier.ContainsKey(nomArticle))
+            
+            if (nbrArticle > 0)
             {
-                panelPanier.Controls.Clear();
-                panier.Add(nomArticle, nbrArticle);  
-
-                for (int i = 0; i <= nbrPanier; i++)
+                if (!panier.ContainsKey(nomArticle))
                 {
-                    nomArticle = panier.ElementAt(i).Key;
-                    nbrArticle = panier.ElementAt(i).Value;
-                    panelPanier.Controls.Add(Panier.AfficherPanier(nomArticle, nbrArticle, nbrPanier, this));
+                    nbrPanier++;
+                    panier.Add(nomArticle, nbrArticle);
+                    afficherPanier();
                 }
-                nbrPanier++;
+
+                else
+                {
+                    panier[nomArticle] = nbrArticle;
+                    Label lblNbr = panelPanier.Controls.Find("lblNbrPanier" + ((sender as Button).Tag.ToString()), true).FirstOrDefault() as Label;
+                    lblNbr.Text = " x" + nbrArticle.ToString();
+                }
             }
-            else
+        }
+
+        public void afficherPanier()
+        {
+            panelPanier.Controls.Clear();
+
+            for (int i = 0; i < nbrPanier; i++)
             {
-                panier[nomArticle] = nbrArticle;
-                Label lblNbr = panelPanier.Controls.Find("lblNbrPanier" + ((sender as Button).Tag.ToString()), true).FirstOrDefault() as Label;
-                lblNbr.Text = " x"  + nbrArticle.ToString();
+                string nom = panier.ElementAt(i).Key;
+                int nbr = panier.ElementAt(i).Value;
+                panelPanier.Controls.Add(Panier.AfficherPanier(nom, nbr, i, this));
             }
+
         }
 
         private void cbxCategories_SelectedIndexChanged(object sender, EventArgs e)
@@ -132,6 +143,7 @@ namespace magasin
             panelPanier.Controls.RemoveByKey("gbx" + (sender as Button).Tag.ToString());
             panier.Remove((sender as Button).Tag.ToString());
             nbrPanier--;
+            afficherPanier();
         }
     }
 }
