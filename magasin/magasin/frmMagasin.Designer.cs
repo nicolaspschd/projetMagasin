@@ -136,7 +136,7 @@
             this.ArticleNatif.ColumnCount = 3;
             this.ArticleNatif.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.92537F));
             this.ArticleNatif.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.07462F));
-            this.ArticleNatif.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 218F));
+            this.ArticleNatif.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 221F));
             this.ArticleNatif.Controls.Add(this.pbxImage, 0, 0);
             this.ArticleNatif.Controls.Add(this.InformationArticle, 1, 0);
             this.ArticleNatif.Controls.Add(this.GestionPanier, 2, 0);
@@ -152,7 +152,7 @@
             this.pbxImage.Image = ((System.Drawing.Image)(resources.GetObject("pbxImage.Image")));
             this.pbxImage.Location = new System.Drawing.Point(5, 5);
             this.pbxImage.Name = "pbxImage";
-            this.pbxImage.Size = new System.Drawing.Size(210, 113);
+            this.pbxImage.Size = new System.Drawing.Size(209, 113);
             this.pbxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImage.TabIndex = 0;
             this.pbxImage.TabStop = false;
@@ -164,14 +164,14 @@
             this.InformationArticle.Controls.Add(this.lblTitre, 0, 0);
             this.InformationArticle.Controls.Add(this.lblPrix, 0, 1);
             this.InformationArticle.Controls.Add(this.lblDescription, 0, 2);
-            this.InformationArticle.Location = new System.Drawing.Point(223, 5);
+            this.InformationArticle.Location = new System.Drawing.Point(222, 5);
             this.InformationArticle.Name = "InformationArticle";
             this.InformationArticle.RowCount = 3;
             this.InformationArticle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.InformationArticle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.InformationArticle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
             this.InformationArticle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.InformationArticle.Size = new System.Drawing.Size(397, 113);
+            this.InformationArticle.Size = new System.Drawing.Size(395, 113);
             this.InformationArticle.TabIndex = 3;
             // 
             // lblTitre
@@ -209,7 +209,7 @@
             this.GestionPanier.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.GestionPanier.Controls.Add(this.nudQuantite, 0, 0);
             this.GestionPanier.Controls.Add(this.btnPanier, 0, 1);
-            this.GestionPanier.Location = new System.Drawing.Point(628, 5);
+            this.GestionPanier.Location = new System.Drawing.Point(625, 5);
             this.GestionPanier.Name = "GestionPanier";
             this.GestionPanier.RowCount = 2;
             this.GestionPanier.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.8938F));
